@@ -9,7 +9,7 @@ const Banner = () => {
           We take care of all your needs
         </h5>
         <h1 className="text-6xl font-extrabold mb-6 leading-snug">
-          Best Hand <span className="border-b-4 border-primary">Tools</span>
+          Best Hand <span className="border-b-[5px] border-primary">Tools</span>
           <br />
           Collection
         </h1>
