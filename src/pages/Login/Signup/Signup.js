@@ -4,41 +4,41 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   return (
     <div>
-      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-12">
-        <div class="card-body">
+      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-12">
+        <div className="card-body">
           <h1 className="text-center text-xl font-bold mb-4">
             Sign up for free
           </h1>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Full name</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Full name</span>
             </label>
             <input
               type="text"
               placeholder="name"
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Email</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Email</span>
             </label>
             <input
               type="text"
               placeholder="email"
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Password</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Password</span>
             </label>
             <input
               type="text"
               placeholder="password"
-              class="input input-bordered"
+              className="input input-bordered"
             />
-            <label class="text-sm mt-3">
+            <label className="text-sm mt-3">
               Already have an account?
               <Link className="btn-link" to="/login">
                 {" "}
@@ -46,8 +46,8 @@ const Signup = () => {
               </Link>
             </label>
           </div>
-          <div class="form-control mt-6">
-            <button class="btn btn-primary">Signup</button>
+          <div className="form-control mt-6">
+            <button className="btn btn-primary">Signup</button>
           </div>
         </div>
       </div>

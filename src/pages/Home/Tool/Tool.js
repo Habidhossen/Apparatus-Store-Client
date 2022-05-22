@@ -12,12 +12,12 @@ const Tool = ({ singleTool }) => {
     availableQuantity,
   } = singleTool;
   return (
-    <div class="card card-compact bg-base-100 shadow-xl">
+    <div className="card card-compact bg-base-100 shadow-xl">
       <figure className="p-8">
         <img src={img} alt="Shoes" />
       </figure>
-      <div class="card-body">
-        <h2 class="card-title">{name}</h2>
+      <div className="card-body">
+        <h2 className="card-title">{name}</h2>
         <p>{desc}</p>
         <h3>
           Price: <span className="font-semibold">${price}</span> (Per unit
@@ -31,8 +31,8 @@ const Tool = ({ singleTool }) => {
           Minimum Order Quantity:{" "}
           <span className="font-semibold">{minimumOrderQuantity}</span>
         </h3>
-        <div class="card-actions justify-end">
-          <Link to={`/purchase/${_id}`} class="btn btn-primary capitalize">
+        <div className="card-actions justify-end">
+          <Link to={`/purchase/${_id}`} className="btn btn-primary capitalize">
             Buy Now
           </Link>
         </div>
