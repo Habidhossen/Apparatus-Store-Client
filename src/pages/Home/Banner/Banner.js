@@ -11,7 +11,7 @@ const Banner = () => {
         <h1 className="text-5xl font-extrabold mt-2 mb-6">
           Best Hand Tools Collection
         </h1>
-        <button className="btn btn-primary">Purchase Now</button>
+        <button className="btn btn-primary">Order Now</button>
       </div>
     </div>
   );
