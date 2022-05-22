@@ -1,17 +1,11 @@
 import React from "react";
-import banner from "../../assets/images/banner.jpg";
+import "./Banner.css";
 
 const Banner = () => {
   return (
-    <div
-      className="min h-screen"
-      style={{
-        backgroundImage: `url(${banner})`,
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div>
-        <h5 className="text-xl uppercase text-primary">
+    <div className="banner">
+      <div className="ml-8">
+        <h5 className="text-lg uppercase text-primary">
           We take care of all your needs
         </h5>
         <h1 className="text-5xl font-extrabold mt-2 mb-6">
