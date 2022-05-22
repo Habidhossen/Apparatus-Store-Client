@@ -1,14 +1,59 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../../Firebase/firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const Login = () => {
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+  const [signInWithEmailAndPassword, emailUser, emailLoading, emailError] =
+    useSignInWithEmailAndPassword(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+  };
+
+  // use navigate hook
+  const navigate = useNavigate();
+  const location = useLocation();
+  // get user current location
+  let from = location.state?.from?.pathname || "/";
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle();
+  };
+
+  // if get user
+  useEffect(() => {
+    if (googleUser || emailUser) {
+      navigate(from, { replace: true });
+    }
+  }, [googleUser, emailUser]);
+
+  // loading
+  if (googleLoading || emailLoading) {
+    return <Loading />;
+  }
+  // declare a variable for store error message
+  let errorMessage = "";
+  // error message
+  if (googleError || emailError) {
+    errorMessage = (
+      <p className="text-danger">
+        Error: {googleError?.message || emailError?.message}
+      </p>
+    );
+  }
 
   return (
     <div>
@@ -59,12 +104,16 @@ const Login = () => {
                 </Link>
               </label>
             </div>
+            {errorMessage}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
           <div className="divider">OR</div>
-          <button className="btn btn-outline btn-secondary">
+          <button
+            onClick={handleGoogleSignIn}
+            className="btn btn-outline btn-secondary"
+          >
             Continue with Google
           </button>
         </div>
