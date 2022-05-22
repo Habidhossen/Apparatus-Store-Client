@@ -24,7 +24,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar sticky top-0 z-50 backdrop-filter backdrop-blur-xl">
+    <div className="navbar sticky top-0 z-50 backdrop-filter backdrop-blur-2xl py-3">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
