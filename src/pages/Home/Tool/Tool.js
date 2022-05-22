@@ -1,8 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Tool = ({ singleTool }) => {
-  const { name, img, desc, price, minimumOrderQuantity, availableQuantity } =
-    singleTool;
+  const {
+    _id,
+    name,
+    img,
+    desc,
+    price,
+    minimumOrderQuantity,
+    availableQuantity,
+  } = singleTool;
   return (
     <div class="card card-compact bg-base-100 shadow-xl">
       <figure className="p-8">
@@ -24,7 +32,9 @@ const Tool = ({ singleTool }) => {
           <span className="font-semibold">{minimumOrderQuantity}</span>
         </h3>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary capitalize">Buy Now</button>
+          <Link to={`/purchase/${_id}`} class="btn btn-primary capitalize">
+            Buy Now
+          </Link>
         </div>
       </div>
     </div>
