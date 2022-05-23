@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Blogs from "./pages/Blogs/Blogs";
 import AddReview from "./pages/Dashboard/AddReview/AddReview";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import MyOrder from "./pages/Dashboard/MyOrder/MyOrder";
@@ -17,6 +18,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/purchase/:Id" element={<Purchase />} />
