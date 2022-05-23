@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Tool = ({ singleTool }) => {
+const Product = ({ singleProduct }) => {
   const {
     _id,
     name,
@@ -10,7 +10,7 @@ const Tool = ({ singleTool }) => {
     price,
     minimumOrderQuantity,
     availableQuantity,
-  } = singleTool;
+  } = singleProduct;
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure className="p-8">
@@ -41,4 +41,4 @@ const Tool = ({ singleTool }) => {
   );
 };
 
-export default Tool;
+export default Product;
