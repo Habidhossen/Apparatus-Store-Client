@@ -6,15 +6,12 @@ import auth from "../../../Firebase/firebase.init";
 import "./Navbar.css";
 
 const Navbar = () => {
-  // get user info from useAuthState
-  const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth); // get user info from useAuthState
 
   // handle logout
   const logout = () => {
     signOut(auth);
   };
-
-  console.log(user);
 
   const menuItems = (
     <>
