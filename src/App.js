@@ -8,6 +8,7 @@ import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 import Home from "./pages/Home/Home/Home";
 import Purchase from "./pages/Home/Purchase/Purchase";
 import Login from "./pages/Login/Login/Login";
+import RequireAuth from "./pages/Login/RequireAuth/RequireAuth";
 import Signup from "./pages/Login/Signup/Signup";
 import Navbar from "./pages/Shared/Navbar/Navbar";
 import NotFound from "./pages/Shared/NotFound/NotFound";
@@ -21,7 +22,14 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/purchase/:productID" element={<Purchase />} />
+        <Route
+          path="/purchase/:productID"
+          element={
+            <RequireAuth>
+              <Purchase />
+            </RequireAuth>
+          }
+        />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<MyProfile />} />
           <Route path="order" element={<MyOrder />} />
