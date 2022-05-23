@@ -9,6 +9,7 @@ import Purchase from "./pages/Home/Purchase/Purchase";
 import Login from "./pages/Login/Login/Login";
 import Signup from "./pages/Login/Signup/Signup";
 import Navbar from "./pages/Shared/Navbar/Navbar";
+import NotFound from "./pages/Shared/NotFound/NotFound";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="order" element={<MyOrder />} />
           <Route path="review" element={<AddReview />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
