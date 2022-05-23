@@ -49,7 +49,7 @@ const Login = () => {
   // error message
   if (googleError || emailError) {
     errorMessage = (
-      <p className="text-danger">
+      <p className="text-error text-sm">
         Error: {googleError?.message || emailError?.message}
       </p>
     );

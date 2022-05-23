@@ -40,7 +40,9 @@ const Signup = () => {
   let errorMessage = "";
   // error message
   if (error) {
-    errorMessage = <p className="text-danger">Error: {error?.message}</p>;
+    errorMessage = (
+      <p className="text-error text-sm">Error: {error?.message}</p>
+    );
   }
 
   return (
