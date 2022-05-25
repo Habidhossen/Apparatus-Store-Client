@@ -20,14 +20,32 @@ const Review = ({ review }) => {
     <div class="card bg-base-100 shadow-md">
       <div class="card-body">
         <div className="flex justify-between">
-          <div className="flex">
-            {/* {rating === "4" && reviewIcon + reviewIcon}
-            {rating === "5" && reviewIcon} */}
-            {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon}
+          <div>
+            {rating === "1" && <span className="flex">{reviewIcon}</span>}
+            {rating === "2" && (
+              <span className="flex">
+                {reviewIcon} {reviewIcon}
+              </span>
+            )}
+            {rating === "3" && (
+              <span className="flex">
+                {reviewIcon} {reviewIcon} {reviewIcon}
+              </span>
+            )}
+            {rating === "4" && (
+              <span className="flex">
+                {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon}
+              </span>
+            )}
+            {rating === "5" && (
+              <span className="flex">
+                {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon}
+              </span>
+            )}
           </div>
-          <div className="flex">
+          <div>
             <h1 className="text-primary">
-              <b>{rating}</b>
+              <b>{rating} Star</b>
             </h1>
           </div>
         </div>

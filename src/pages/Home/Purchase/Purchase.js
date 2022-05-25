@@ -22,6 +22,7 @@ const Purchase = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
 
   const onSubmit = (data) => {
@@ -56,6 +57,7 @@ const Purchase = () => {
     })
       .then((response) => response.json())
       .then((data) => data);
+    reset();
     toast.success("Product Ordered successfully", {
       theme: "colored",
       autoClose: 2000,
