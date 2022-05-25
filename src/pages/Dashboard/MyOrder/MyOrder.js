@@ -15,8 +15,6 @@ const MyOrder = () => {
       .then((data) => setOrders(data));
   }, []);
 
-  console.log(orders);
-
   return (
     <div>
       <div class="overflow-x-auto p-4">
