@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 
 const AddReview = () => {
@@ -10,12 +11,29 @@ const AddReview = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    // send data to the server
+    fetch("http://localhost:5000/review", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => data);
+    toast.success("Review added successfully", {
+      theme: "colored",
+      autoClose: 2000,
+    });
+    reset();
+  };
 
   return (
-    <section>
+    <section className="mt-16">
       <div class="card w-96 mx-auto shadow-sm bg-base-100">
         <div class="card-body">
           <h1 className="text-center text-xl font-bold mb-4">Reviews</h1>
@@ -58,16 +76,16 @@ const AddReview = () => {
               <textarea
                 class="textarea textarea-bordered"
                 placeholder="Write here"
-                {...register("review", { required: true })}
+                {...register("msg", { required: true })}
               ></textarea>
-              {errors.review && (
+              {errors.msg && (
                 <span className="label-text-alt text-red-500 mt-2">
                   Review is Required
                 </span>
               )}
             </div>
             <div class="form-control mt-6">
-              <button class="btn btn-info text-white">Add Review</button>
+              <button class="btn btn-info text-white">Submit</button>
             </div>
           </form>
         </div>

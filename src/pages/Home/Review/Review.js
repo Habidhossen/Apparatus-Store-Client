@@ -21,6 +21,8 @@ const Review = ({ review }) => {
       <div class="card-body">
         <div className="flex justify-between">
           <div className="flex">
+            {/* {rating === "4" && reviewIcon + reviewIcon}
+            {rating === "5" && reviewIcon} */}
             {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon}
           </div>
           <div className="flex">

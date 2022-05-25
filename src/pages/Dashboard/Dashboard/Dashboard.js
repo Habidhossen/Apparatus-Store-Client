@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 const Dashboard = () => {
   return (
@@ -7,9 +8,9 @@ const Dashboard = () => {
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content bg-gray-50">
         {/* <!-- Page content here --> */}
-        <h1 className="text-3xl font-bold text-gray-800 mt-2 ml-2">
+        {/* <h1 className="text-3xl font-bold text-gray-800 mt-2 ml-2">
           Dashboard
-        </h1>
+        </h1> */}
         <Outlet />
         <label
           for="my-drawer-2"
@@ -32,6 +33,7 @@ const Dashboard = () => {
           </li>
         </ul>
       </div>
+      <ToastContainer />
     </div>
   );
 };
