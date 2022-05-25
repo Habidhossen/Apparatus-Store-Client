@@ -34,7 +34,7 @@ const MyProfile = () => {
 
   return (
     <section>
-      <div class="card w-96 mx-auto shadow-sm bg-base-100">
+      <div class="card w-96 mx-auto shadow-sm bg-base-100 mt-2">
         <div class="card-body">
           <h1 className="text-center text-xl font-bold mb-4">My Profile</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
