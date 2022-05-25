@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 
 const Purchase = () => {
   const [user] = useAuthState(auth); // get user info from useAuthState
   const { productID } = useParams(); // get productId from params
   const [product, setProduct] = useState({});
+  const [productTotalPrice, setProductTotalPrice] = useState("");
 
   useEffect(() => {
     const url = `http://localhost:5000/product/${productID}`;
@@ -22,7 +24,43 @@ const Purchase = () => {
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const totalPrice = product.price * data.orderQuantity;
+    setProductTotalPrice(totalPrice);
+    const productName = product.name;
+    const customerName = data.name;
+    const email = data.email;
+    const phone = data.phone;
+    const address = data.address;
+    const orderQuantity = data.orderQuantity;
+
+    //get all item in one array
+    const order = {
+      productName,
+      customerName,
+      email,
+      phone,
+      address,
+      orderQuantity,
+      totalPrice,
+    };
+
+    // send data to the server
+    const url = "http://localhost:5000/order";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((response) => response.json())
+      .then((data) => data);
+    toast.success("Product Ordered successfully", {
+      theme: "colored",
+      autoClose: 2000,
+    });
+  };
 
   return (
     <section className="bg-gray-50 px-12 py-6">
@@ -39,6 +77,8 @@ const Purchase = () => {
           <h1>description: {product.desc}</h1>
           <h1>available Quantity: {product.availableQuantity}</h1>
           <h1>minimum Order Quantity: {product.minimumOrderQuantity}</h1>
+
+          <h1>Total Price: {productTotalPrice}</h1>
         </div>
         <div>
           <div class="card shadow-sm bg-base-100">
@@ -151,13 +191,14 @@ const Purchase = () => {
                   )}
                 </div>
                 <div class="form-control mt-6">
-                  <button class="btn btn-primary">Purchase</button>
+                  <button class="btn btn-primary">Order</button>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
