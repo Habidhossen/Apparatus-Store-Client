@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import DeleteConfirmModal from "../DeleteConfirmModal/DeleteConfirmModal";
 
 const Dashboard = () => {
   return (
@@ -31,9 +32,26 @@ const Dashboard = () => {
           <li>
             <Link to="review">Add a Review</Link>
           </li>
+          {/* below item is only for admin */}
+          <li>
+            <Link to="add-product">Add a Product</Link>
+          </li>
+          <li>
+            <Link to="manage-product">Manage Products</Link>
+          </li>
+          <li>
+            <Link to="manage-order">Manage all Orders</Link>
+          </li>
+          <li>
+            <Link to="make-admin">Make Admin</Link>
+          </li>
         </ul>
       </div>
+      {/* React toast */}
       <ToastContainer />
+
+      {/* Delete Modal */}
+      <DeleteConfirmModal />
     </div>
   );
 };

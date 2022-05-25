@@ -26,9 +26,12 @@ const MyOrderRow = ({ order }) => {
         <button className="btn btn-xs btn-success capitalize text-white">
           Payment
         </button>
-        <button className="btn btn-xs btn-error capitalize text-white ml-2">
+        <label
+          for="order-delete"
+          className="btn btn-xs btn-error capitalize text-white ml-2"
+        >
           Cancel
-        </button>
+        </label>
       </td>
     </tr>
   );

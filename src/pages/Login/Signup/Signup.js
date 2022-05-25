@@ -1,5 +1,8 @@
-import React, { useEffect } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React from "react";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
@@ -8,6 +11,12 @@ import Loading from "../../Shared/Loading/Loading";
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  // use navigate hook
+  const navigate = useNavigate();
+  const location = useLocation();
+  // get user current location
+  let from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -16,32 +25,25 @@ const Signup = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    createUserWithEmailAndPassword(data.email, data.password);
+    createUserWithEmailAndPassword(data?.email, data?.password);
+    updateProfile({ displayName: data?.name });
   };
 
-  // use navigate hook
-  const navigate = useNavigate();
-  const location = useLocation();
-  // get user current location
-  let from = location.state?.from?.pathname || "/";
-
-  // if create user
-  useEffect(() => {
-    if (user) {
-      Navigate(from, { replace: true });
-    }
-  }, [user]);
-
+  if (user) {
+    Navigate(from, { replace: true });
+  }
   // loading
-  if (loading) {
+  if (loading || updating) {
     return <Loading />;
   }
   // declare a variable for store error message
   let errorMessage = "";
   // error message
-  if (error) {
+  if (error || updateError) {
     errorMessage = (
-      <p className="text-error text-sm">Error: {error?.message}</p>
+      <p className="text-error text-sm">
+        Error: {error?.message || updateError?.message}
+      </p>
     );
   }
 

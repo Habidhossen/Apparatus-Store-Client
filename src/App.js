@@ -2,8 +2,11 @@ import { Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Blogs from "./pages/Blogs/Blogs";
+import AddProduct from "./pages/Dashboard/AddProduct/AddProduct";
 import AddReview from "./pages/Dashboard/AddReview/AddReview";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
+import ManageAllOrders from "./pages/Dashboard/ManageAllOrders/ManageAllOrders";
+import ManageProducts from "./pages/Dashboard/ManageProducts/ManageProducts";
 import MyOrder from "./pages/Dashboard/MyOrder/MyOrder";
 import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 import Home from "./pages/Home/Home/Home";
@@ -42,6 +45,9 @@ function App() {
           <Route index element={<MyProfile />} />
           <Route path="order" element={<MyOrder />} />
           <Route path="review" element={<AddReview />} />
+          <Route path="add-product" element={<AddProduct />} />
+          <Route path="manage-product" element={<ManageProducts />} />
+          <Route path="manage-order" element={<ManageAllOrders />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
