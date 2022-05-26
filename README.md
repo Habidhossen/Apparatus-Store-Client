@@ -1,6 +1,6 @@
 # Apparatus Store
 
-<!-- Live Site: [https://carspot-wheels-and-deals.web.app/](https://carspot-wheels-and-deals.web.app/) -->
+Live Site: [https://apparatus-store-f3edc.web.app/](https://apparatus-store-f3edc.web.app/)
 
 <!-- `Apparatus Store` is a car warehouse website that deals with cars. It's basically a warehouse/dealership based website where stored products and manage it. -->
 
@@ -17,4 +17,4 @@
 
 ### Uses Technologies
 
-`React`, `React-Router`, `React-Bootstrap`, `Firebase`, `React-Firebase-Hooks`, `Node.js`, `Express.js`, `MongoDB`, `React-Toastify`
+`React`, `React-Router`, `Tailwind CSS`, `Daisy UI`, `Firebase`, `React-Firebase-Hooks`, `React-Hook-Form`, `Node.js`, `Express.js`, `MongoDB`, `React-Toastify`

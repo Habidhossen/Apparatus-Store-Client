@@ -16,7 +16,7 @@ const AddReview = () => {
 
   const onSubmit = (data) => {
     // send data to the server
-    fetch("http://localhost:5000/review", {
+    fetch("https://guarded-reaches-73348.herokuapp.com/review", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

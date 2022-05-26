@@ -16,7 +16,7 @@ const MyProfile = () => {
 
   const onSubmit = (data) => {
     // send data to the server
-    fetch("http://localhost:5000/user", {
+    fetch("https://guarded-reaches-73348.herokuapp.com/user", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

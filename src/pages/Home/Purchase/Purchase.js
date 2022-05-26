@@ -12,7 +12,7 @@ const Purchase = () => {
   const [productTotalPrice, setProductTotalPrice] = useState("");
 
   useEffect(() => {
-    const url = `http://localhost:5000/product/${productID}`;
+    const url = `https://guarded-reaches-73348.herokuapp.com/product/${productID}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -47,7 +47,7 @@ const Purchase = () => {
     };
 
     // send data to the server
-    const url = "http://localhost:5000/order";
+    const url = "https://guarded-reaches-73348.herokuapp.com/order";
     fetch(url, {
       method: "POST",
       headers: {

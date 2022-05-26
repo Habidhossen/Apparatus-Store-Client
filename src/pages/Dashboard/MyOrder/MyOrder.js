@@ -8,7 +8,7 @@ const MyOrder = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/order/${user.email}`;
+    const url = `https://guarded-reaches-73348.herokuapp.com/order/${user.email}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())
