@@ -34,18 +34,18 @@ const AddReview = () => {
 
   return (
     <section className="mt-16">
-      <div class="card w-96 mx-auto shadow-sm bg-base-100">
-        <div class="card-body">
+      <div className="card w-96 mx-auto shadow-sm bg-base-100">
+        <div className="card-body">
           <h1 className="text-center text-xl font-bold mb-4">Reviews</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Your Name</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Your Name</span>
               </label>
               <input
                 type="text"
                 defaultValue={user?.displayName}
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("name", { required: true })}
               />
               {errors.name && (
@@ -54,13 +54,13 @@ const AddReview = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Ratings</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Ratings</span>
               </label>
               <select
                 {...register("rating")}
-                class="select select-bordered font-normal"
+                className="select select-bordered font-normal"
               >
                 <option>1</option>
                 <option>2</option>
@@ -69,12 +69,12 @@ const AddReview = () => {
                 <option>5</option>
               </select>
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Reviews</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Reviews</span>
               </label>
               <textarea
-                class="textarea textarea-bordered"
+                className="textarea textarea-bordered"
                 placeholder="Write here"
                 {...register("msg", { required: true })}
               ></textarea>
@@ -84,8 +84,8 @@ const AddReview = () => {
                 </span>
               )}
             </div>
-            <div class="form-control mt-6">
-              <button class="btn btn-info text-white">Submit</button>
+            <div className="form-control mt-6">
+              <button className="btn btn-info text-white">Submit</button>
             </div>
           </form>
         </div>

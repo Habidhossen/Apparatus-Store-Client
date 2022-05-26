@@ -11,7 +11,7 @@ const LatestBlog = () => {
       img: "https://i.ibb.co/zmDVdZc/tools1.png",
     },
     {
-      __id: 2,
+      _id: 2,
       title: "Multi-Bit vs. Individual Screwdrivers – You Have to Pick!",
       desc: "Multi-bit screwdrivers excel in giving you x-number of screwdriver sizes and styles in a compact package.",
       date: "20 May, 2022",

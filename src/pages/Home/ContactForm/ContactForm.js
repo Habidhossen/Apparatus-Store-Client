@@ -29,15 +29,15 @@ const ContactForm = () => {
             <input
               type="text"
               placeholder="Name"
-              class="input input-bordered input-primary w-full"
+              className="input input-bordered input-primary w-full"
             />
             <input
               type="text"
               placeholder="Email"
-              class="input input-bordered input-primary w-full mt-4"
+              className="input input-bordered input-primary w-full mt-4"
             />
             <textarea
-              class="textarea textarea-primary w-full mt-4"
+              className="textarea textarea-primary w-full mt-4"
               placeholder="Bio"
             ></textarea>
             <button className="btn btn-primary w-full mt-2">Submit</button>

@@ -5,14 +5,14 @@ import DeleteConfirmModal from "../DeleteConfirmModal/DeleteConfirmModal";
 
 const Dashboard = () => {
   return (
-    <div class="drawer drawer-mobile">
-      <input id="side-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content bg-gray-50">
+    <div className="drawer drawer-mobile">
+      <input id="side-drawer" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content bg-gray-50">
         <Outlet />
       </div>
-      <div class="drawer-side">
-        <label for="side-drawer" class="drawer-overlay"></label>
-        <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+      <div className="drawer-side">
+        <label htmlFor="side-drawer" className="drawer-overlay"></label>
+        <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
           <li>
             <Link to="">My Profile</Link>
           </li>

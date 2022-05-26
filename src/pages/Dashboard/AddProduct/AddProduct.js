@@ -30,18 +30,18 @@ const AddProduct = () => {
 
   return (
     <section className="mt-16">
-      <div class="card w-96 mx-auto shadow-sm bg-base-100">
-        <div class="card-body">
+      <div className="card w-96 mx-auto shadow-sm bg-base-100">
+        <div className="card-body">
           <h1 className="text-center text-xl font-bold mb-4">Add Product</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Product Name</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Product Name</span>
               </label>
               <input
                 type="text"
                 placeholder="Enter name"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("name", { required: true })}
               />
               {errors.name && (
@@ -50,14 +50,14 @@ const AddProduct = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Product Image</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Product Image</span>
               </label>
               <input
                 type="text"
                 placeholder="Enter image link"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("img", { required: true })}
               />
               {errors.img && (
@@ -66,14 +66,14 @@ const AddProduct = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Price</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Price</span>
               </label>
               <input
                 type="number"
                 placeholder="Enter price"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("price", { required: true })}
               />
               {errors.price && (
@@ -82,14 +82,14 @@ const AddProduct = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Available Quantity</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Available Quantity</span>
               </label>
               <input
                 type="number"
                 placeholder="Available quantity"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("availableQuantity", { required: true })}
               />
               {errors.availableQuantity && (
@@ -98,14 +98,14 @@ const AddProduct = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Minimum Order Quantity</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Minimum Order Quantity</span>
               </label>
               <input
                 type="number"
                 placeholder="Minimum order quantity"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("minimumOrderQuantity", { required: true })}
               />
               {errors.minimumOrderQuantity && (
@@ -114,12 +114,12 @@ const AddProduct = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Product Description</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Product Description</span>
               </label>
               <textarea
-                class="textarea textarea-bordered"
+                className="textarea textarea-bordered"
                 placeholder="Description here"
                 {...register("desc", { required: true })}
               ></textarea>
@@ -129,8 +129,8 @@ const AddProduct = () => {
                 </span>
               )}
             </div>
-            <div class="form-control mt-6">
-              <button class="btn btn-info text-white">Add</button>
+            <div className="form-control mt-6">
+              <button className="btn btn-info text-white">Add</button>
             </div>
           </form>
         </div>

@@ -7,8 +7,8 @@ const ManageProductsRow = ({ product }) => {
   return (
     <tr className="hover">
       <th>
-        <div class="avatar">
-          <div class="w-8 rounded">
+        <div className="avatar">
+          <div className="w-8 rounded">
             <img src={img} alt="Tailwind-CSS-Avatar-component" />
           </div>
         </div>
@@ -20,7 +20,7 @@ const ManageProductsRow = ({ product }) => {
 
       <td>
         {/* <label
-          for="order-delete"
+          htmlFor="order-delete"
           className="btn btn-xs btn-error capitalize text-white ml-2"
         >
           Cancel

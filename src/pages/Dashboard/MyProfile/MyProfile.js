@@ -34,18 +34,18 @@ const MyProfile = () => {
 
   return (
     <section>
-      <div class="card w-96 mx-auto shadow-sm bg-base-100 mt-2">
-        <div class="card-body">
+      <div className="card w-96 mx-auto shadow-sm bg-base-100 mt-2">
+        <div className="card-body">
           <h1 className="text-center text-xl font-bold mb-4">My Profile</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Name</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
               </label>
               <input
                 type="text"
                 defaultValue={user?.displayName}
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("name", { required: true })}
               />
               {errors.name && (
@@ -54,14 +54,14 @@ const MyProfile = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Email</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
                 value={user?.email}
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("email", { required: true })}
               />
               {errors.email && (
@@ -70,14 +70,14 @@ const MyProfile = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Phone</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Phone</span>
               </label>
               <input
                 type="text"
                 placeholder="Phone"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("phone", { required: true })}
               />
               {errors.phone && (
@@ -86,14 +86,14 @@ const MyProfile = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Education</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Education</span>
               </label>
               <input
                 type="text"
                 placeholder="Education"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("education", { required: true })}
               />
               {errors.education && (
@@ -102,14 +102,14 @@ const MyProfile = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Location</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Location</span>
               </label>
               <input
                 type="text"
                 placeholder="Location"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("location", { required: true })}
               />
               {errors.location && (
@@ -118,14 +118,14 @@ const MyProfile = () => {
                 </span>
               )}
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Linkedin</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Linkedin</span>
               </label>
               <input
                 type="text"
                 placeholder="Linkedin profile link"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("linkedin", { required: true })}
               />
               {errors.linkedin && (
@@ -135,8 +135,10 @@ const MyProfile = () => {
               )}
             </div>
 
-            <div class="form-control mt-6">
-              <button class="btn btn-success text-white">Update Profile</button>
+            <div className="form-control mt-6">
+              <button className="btn btn-success text-white">
+                Update Profile
+              </button>
             </div>
           </form>
         </div>

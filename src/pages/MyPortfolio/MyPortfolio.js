@@ -2,7 +2,7 @@ import React from "react";
 
 const MyPortfolio = () => {
   return (
-    <div class="card bg-base-100 shadow-md m-20 p-12">
+    <div className="card bg-base-100 shadow-md m-20 p-12">
       {" "}
       <h1 className="text-4xl font-extrabold text-slate-700">Habid Hossen</h1>
       <h2 className="text-md font-semibold my-2">habidhossen2@gmail.com</h2>

@@ -4,47 +4,37 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 
 const Signup = () => {
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-  // use navigate hook
-  const navigate = useNavigate();
-  const location = useLocation();
-  // get user current location
-  let from = location.state?.from?.pathname || "/";
-
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-  const onSubmit = (data) => {
-    createUserWithEmailAndPassword(data?.email, data?.password);
-    updateProfile({ displayName: data?.name });
+  const navigate = useNavigate();
+
+  const onSubmit = async (data) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
+    navigate("/dashboard");
   };
 
-  if (user) {
-    Navigate(from, { replace: true });
-  }
   // loading
-  if (loading || updating) {
+  if (loading) {
     return <Loading />;
   }
   // declare a variable for store error message
   let errorMessage = "";
   // error message
-  if (error || updateError) {
-    errorMessage = (
-      <p className="text-error text-sm">
-        Error: {error?.message || updateError?.message}
-      </p>
-    );
+  if (error) {
+    errorMessage = <p className="text-danger">Error: {error?.message}</p>;
   }
 
   return (

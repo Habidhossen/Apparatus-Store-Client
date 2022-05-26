@@ -83,17 +83,17 @@ const Purchase = () => {
           <h1>Total Price: {productTotalPrice}</h1>
         </div>
         <div>
-          <div class="card shadow-sm bg-base-100">
-            <div class="card-body">
+          <div className="card shadow-sm bg-base-100">
+            <div className="card-body">
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text">Name</span>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Name</span>
                   </label>
                   <input
                     type="text"
                     defaultValue={user?.displayName}
-                    class="input input-bordered"
+                    className="input input-bordered"
                     {...register("name", { required: true })}
                   />
                   {errors.name && (
@@ -102,14 +102,14 @@ const Purchase = () => {
                     </span>
                   )}
                 </div>
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text">Email</span>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
                   </label>
                   <input
                     type="email"
                     value={user?.email}
-                    class="input input-bordered"
+                    className="input input-bordered"
                     {...register("email", { required: true })}
                   />
                   {errors.email && (
@@ -118,14 +118,14 @@ const Purchase = () => {
                     </span>
                   )}
                 </div>
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text">Phone</span>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Phone</span>
                   </label>
                   <input
                     type="text"
                     placeholder="Enter phone"
-                    class="input input-bordered"
+                    className="input input-bordered"
                     {...register("phone", { required: true })}
                   />
                   {errors.phone && (
@@ -134,12 +134,12 @@ const Purchase = () => {
                     </span>
                   )}
                 </div>
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text">Address</span>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Address</span>
                   </label>
                   <textarea
-                    class="textarea textarea-bordered"
+                    className="textarea textarea-bordered"
                     placeholder="Enter address"
                     {...register("address", { required: true })}
                   ></textarea>
@@ -149,14 +149,14 @@ const Purchase = () => {
                     </span>
                   )}
                 </div>
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text">Enter Order Quantity</span>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Enter Order Quantity</span>
                   </label>
                   <input
                     type="number"
                     defaultValue={product.minimumOrderQuantity}
-                    class="input input-bordered"
+                    className="input input-bordered"
                     {...register("orderQuantity", {
                       required: {
                         value: true,
@@ -192,8 +192,8 @@ const Purchase = () => {
                     </span>
                   )}
                 </div>
-                <div class="form-control mt-6">
-                  <button class="btn btn-primary">Order</button>
+                <div className="form-control mt-6">
+                  <button className="btn btn-primary">Order</button>
                 </div>
               </form>
             </div>

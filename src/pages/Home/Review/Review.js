@@ -7,7 +7,7 @@ const Review = ({ review }) => {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5"
+        className="h-5 w-5"
         viewBox="0 0 20 20"
         fill="#fdb819"
       >
@@ -17,8 +17,8 @@ const Review = ({ review }) => {
   );
 
   return (
-    <div class="card bg-base-100 shadow-md">
-      <div class="card-body">
+    <div className="card bg-base-100 shadow-md">
+      <div className="card-body">
         <div className="flex justify-between">
           <div>
             {rating === "1" && <span className="flex">{reviewIcon}</span>}
@@ -50,7 +50,7 @@ const Review = ({ review }) => {
           </div>
         </div>
         <p>{msg}</p>
-        <h2 class="text-xl font-bold">&#8212; {name}</h2>
+        <h2 className="text-xl font-bold">&#8212; {name}</h2>
       </div>
     </div>
   );

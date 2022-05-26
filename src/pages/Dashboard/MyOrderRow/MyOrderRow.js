@@ -27,7 +27,7 @@ const MyOrderRow = ({ order }) => {
           Payment
         </button>
         <label
-          for="order-delete"
+          htmlFor="order-delete"
           className="btn btn-xs btn-error capitalize text-white ml-2"
         >
           Cancel
