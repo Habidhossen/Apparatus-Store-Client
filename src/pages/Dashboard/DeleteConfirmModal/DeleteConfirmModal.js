@@ -1,31 +1,54 @@
 import React from "react";
 
-const DeleteConfirmModal = ({ order }) => {
-  <label htmlFor="order-delete" className="btn modal-button">
-    open modal
-  </label>;
+const DeleteConfirmModal = ({ deletingOrder, setDeletingOrder }) => {
+  const { _id } = deletingOrder;
+
+  const handleOrderDelete = () => {
+    console.log(_id);
+    // fetch(`https://secret-dusk-46242.herokuapp.com/doctor/${email}`, {
+    //   method: "DELETE",
+    //   headers: {
+    //     authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+    //   },
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     if (data.deletedCount) {
+    //       toast.success(`Doctor: ${name} is deleted.`);
+    //       setDeletingDoctor(null);
+    //       refetch();
+    //     }
+    //   });
+  };
 
   return (
     <div>
-      <input type="checkbox" id="order-delete" className="modal-toggle" />
-      <div className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
+      <input type="checkbox" id="order-delete" class="modal-toggle" />
+      <div class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
           <label
-            htmlFor="order-delete"
-            className="btn btn-sm btn-circle absolute right-2 top-2"
+            for="order-delete"
+            class="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
 
-          <h3 className="font-bold text-lg">DELETE</h3>
-          <p className="py-4">Are you sure want to delete it?</p>
-          <div className="modal-action">
+          <h3 class="font-bold text-lg">Delete order</h3>
+          <p class="py-4">Are you sure want to delete it?</p>
+          <div class="modal-action">
             <label
-              //   onClick={() => handleOrderDelete(order)}
-              htmlFor="order-delete"
-              className="btn btn-sm btn-error text-white"
+              for="order-delete"
+              class="btn btn-sm btn-neutral text-white font-normal capitalize"
             >
-              Delete
+              No
+            </label>
+            <label
+              onClick={handleOrderDelete}
+              for="order-delete"
+              class="btn btn-sm btn-error text-white font-normal capitalize"
+            >
+              Yes
             </label>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const MyOrderRow = ({ order }) => {
+const MyOrderRow = ({ order, setDeletingOrder }) => {
   const {
     _id,
     productName,
@@ -12,7 +12,6 @@ const MyOrderRow = ({ order }) => {
     totalPrice,
   } = order;
 
-  console.log(order);
   return (
     <tr className="hover">
       <th>{productName}</th>
@@ -27,7 +26,8 @@ const MyOrderRow = ({ order }) => {
           Payment
         </button>
         <label
-          htmlFor="order-delete"
+          onClick={() => setDeletingOrder(order)}
+          for="order-delete"
           className="btn btn-xs btn-error capitalize text-white ml-2"
         >
           Cancel
