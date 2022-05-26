@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
@@ -15,26 +15,37 @@ const Signup = () => {
     handleSubmit,
   } = useForm();
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
 
+  // handle registration using name, email and password
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    navigate("/dashboard");
   };
 
+  // if user created
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user]);
+
   // loading
-  if (loading) {
+  if (loading || updating) {
     return <Loading />;
   }
   // declare a variable for store error message
   let errorMessage = "";
   // error message
-  if (error) {
-    errorMessage = <p className="text-danger">Error: {error?.message}</p>;
+  if (error || updateError) {
+    errorMessage = (
+      <p className="text-error text-sm">
+        Error: {error?.message || updateError?.message}
+      </p>
+    );
   }
 
   return (
@@ -44,6 +55,7 @@ const Signup = () => {
           <h1 className="text-center text-xl font-bold mb-4">
             Sign up for free
           </h1>
+          {errorMessage}
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control">
               <label className="label">
@@ -92,7 +104,6 @@ const Signup = () => {
                   Password is required
                 </span>
               )}
-
               <label className="text-sm mt-3">
                 Already have an account?
                 <Link className="btn-link" to="/login">
@@ -101,7 +112,6 @@ const Signup = () => {
                 </Link>
               </label>
             </div>
-            {errorMessage}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Signup</button>
             </div>
