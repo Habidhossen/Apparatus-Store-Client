@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+# Apparatus Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Live Site: [https://carspot-wheels-and-deals.web.app/](https://carspot-wheels-and-deals.web.app/) -->
 
-## Available Scripts
+<!-- `Apparatus Store` is a car warehouse website that deals with cars. It's basically a warehouse/dealership based website where stored products and manage it. -->
 
-In the project directory, you can run:
+<!-- - The client/customer can view car information such as the latest car price, car stock, and overall latest car information.
+- Admin can add a new product, manage and delete products such as stock
+  cars, etc.
+- All this process admin have to log in for accessing those features.
+- This site has two authentication systems which is a Google login and another is an Email-Password based login system.
+- This website is protected with a Firebase login System. So users do have not to worry about the security system.
+- On this site, MongoDB is used as a Database so users can get a better experience, because MongoDB is flexible and handles a variety of data and a huge amount of data.
+- A specific person log in with his/her email and he/she will be able to see his/her adding products information.
+- Responsive and Attractive user interface and user-friendly site.
+- This site build with React.js, Node.js, Express.js, MongoDB, Firebase and many more. -->
 
-### `npm start`
+### Uses Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`React`, `React-Router`, `React-Bootstrap`, `Firebase`, `React-Firebase-Hooks`, `Node.js`, `Express.js`, `MongoDB`, `React-Toastify`
