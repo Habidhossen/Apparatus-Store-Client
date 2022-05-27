@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import notFound from "../../../assets/images/not-found.png";
 
 const NotFound = () => {
   return (
-    <section className="text-center mt-36">
-      <h1 className="text-8xl font-extrabold uppercase">Oops!</h1>
+    <section className="text-center flex flex-col items-center">
+      <img src={notFound} alt="" />
+      <h1 className="text-5xl font-extrabold uppercase">Oops!</h1>
       <h5 className="text-xl font-semibold uppercase my-2">
         404 - Page not found
       </h5>

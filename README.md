@@ -17,4 +17,4 @@ Live Site: [https://apparatus-store-f3edc.web.app/](https://apparatus-store-f3ed
 
 ### Uses Technologies
 
-`React`, `React-Router`, `Tailwind CSS`, `Daisy UI`, `Firebase`, `React-Firebase-Hooks`, `React-Hook-Form`, `Node.js`, `Express.js`, `MongoDB`, `React-Toastify`
+`React`, `React-Router`, `Tailwind CSS`, `Daisy UI`, `Firebase`, `React Firebase Hooks`, `React Hook Form`, `React Query`, `Stripe`, `Node.js`, `Express.js`, `MongoDB`, `React Toastify`

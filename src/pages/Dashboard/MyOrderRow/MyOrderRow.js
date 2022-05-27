@@ -37,13 +37,15 @@ const MyOrderRow = ({ order, setDeletingOrder, refetch }) => {
           </Link>
         )}
 
-        <label
-          onClick={() => setDeletingOrder(order)}
-          for="order-delete"
-          className="btn btn-xs btn-error capitalize text-white ml-2"
-        >
-          Cancel
-        </label>
+        {paid || (
+          <label
+            onClick={() => setDeletingOrder(order)}
+            for="order-delete"
+            className="btn btn-xs btn-error capitalize text-white ml-2"
+          >
+            Cancel
+          </label>
+        )}
       </td>
     </tr>
   );
