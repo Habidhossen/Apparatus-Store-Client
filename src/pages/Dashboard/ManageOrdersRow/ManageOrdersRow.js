@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const ManageOrdersRow = ({ order, setDeletingOrder, refetch }) => {
   const {
@@ -25,14 +24,9 @@ const ManageOrdersRow = ({ order, setDeletingOrder, refetch }) => {
       <td>{totalPrice}</td>
       <td>
         {paid ? (
-          <span class="badge badge-info text-white text-xs">Paid</span>
+          <span class="badge badge-warning text-white text-xs">Pending</span>
         ) : (
-          <Link
-            to={`/dashboard/payment/${_id}`}
-            className="btn btn-xs btn-success capitalize text-white"
-          >
-            Payment
-          </Link>
+          <span class="badge badge-info text-white text-xs">Unpaid</span>
         )}
 
         {paid || (

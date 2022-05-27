@@ -38,7 +38,7 @@ const ContactForm = () => {
             />
             <textarea
               className="textarea textarea-primary w-full mt-4"
-              placeholder="Bio"
+              placeholder="Message"
             ></textarea>
             <button className="btn btn-primary w-full mt-2">Submit</button>
           </form>

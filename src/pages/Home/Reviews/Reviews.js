@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useQuery } from "react-query";
+import Loading from "../../Shared/Loading/Loading";
 import Review from "../Review/Review";
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState([]);
+  const {
+    data: reviews,
+    isLoading,
+    refetch,
+  } = useQuery("reviews", () =>
+    fetch(`https://guarded-reaches-73348.herokuapp.com/review`).then((res) =>
+      res.json()
+    )
+  );
 
-  useEffect(() => {
-    const url = "https://guarded-reaches-73348.herokuapp.com/review";
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setReviews(data));
-  }, []);
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <section className="my-20">

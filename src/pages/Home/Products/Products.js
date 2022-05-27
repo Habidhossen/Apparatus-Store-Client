@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useQuery } from "react-query";
+import Loading from "../../Shared/Loading/Loading";
 import Tool from "../Product/Product";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const {
+    data: products,
+    isLoading,
+    refetch,
+  } = useQuery("products", () =>
+    fetch(`https://guarded-reaches-73348.herokuapp.com/product`).then((res) =>
+      res.json()
+    )
+  );
 
-  useEffect(() => {
-    const url = "https://guarded-reaches-73348.herokuapp.com/product";
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <section className="my-20">

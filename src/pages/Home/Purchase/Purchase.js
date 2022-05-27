@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const Purchase = () => {
   const [user] = useAuthState(auth); // get user info from useAuthState
   const { productID } = useParams(); // get productId from params
-  const [product, setProduct] = useState({});
   const [productTotalPrice, setProductTotalPrice] = useState("");
-
-  useEffect(() => {
-    const url = `https://guarded-reaches-73348.herokuapp.com/product/${productID}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, []);
 
   const {
     register,
@@ -24,6 +18,20 @@ const Purchase = () => {
     handleSubmit,
     reset,
   } = useForm();
+
+  const {
+    data: product,
+    isLoading,
+    refetch,
+  } = useQuery("product", () =>
+    fetch(
+      `https://guarded-reaches-73348.herokuapp.com/product/${productID}`
+    ).then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   const onSubmit = (data) => {
     const totalPrice = product.price * data.orderQuantity;
