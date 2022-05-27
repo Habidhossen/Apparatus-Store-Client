@@ -2,18 +2,15 @@
 
 Live Site: [https://apparatus-store-f3edc.web.app/](https://apparatus-store-f3edc.web.app/)
 
-<!-- `Apparatus Store` is a car warehouse website that deals with cars. It's basically a warehouse/dealership based website where stored products and manage it. -->
+`Apparatus Store` is a manufacturer's website where customers can order tools like metalwork tools, electric tools, etc. After successfully ordering, customers can pay and get further process about their products/tools.
 
-<!-- - The client/customer can view car information such as the latest car price, car stock, and overall latest car information.
-- Admin can add a new product, manage and delete products such as stock
-  cars, etc.
-- All this process admin have to log in for accessing those features.
-- This site has two authentication systems which is a Google login and another is an Email-Password based login system.
-- This website is protected with a Firebase login System. So users do have not to worry about the security system.
-- On this site, MongoDB is used as a Database so users can get a better experience, because MongoDB is flexible and handles a variety of data and a huge amount of data.
-- A specific person log in with his/her email and he/she will be able to see his/her adding products information.
-- Responsive and Attractive user interface and user-friendly site.
-- This site build with React.js, Node.js, Express.js, MongoDB, Firebase and many more. -->
+- Customers/users can view product/tool information. They can order, cancel and pay.
+- Users can view, edit their profile and update info. Users/customers also add reviews about products which will show on the home page and everyone see it. But before this process users have must be logged in.
+- Admin can access some special features like add a new product, delete a product, cancel the order, change order status, make an admin, etc. Basically, the admin has full access to this website and controls it.
+- This site has two authentication systems which is a Google login and another is an Email-Password based login system which controls by Firebase so it's secured. And MongoDB is used as a Database so users can get a better experience because MongoDB is flexible and handles a variety of data and a huge amounts of data.
+- There are two more different sections on this site for giving extra benefits to customers/users, which are the Latest Blog section where users get the latest blog/article about tools and products and another section is the Contact form where customers/users can contact with authority and feedback too.
+- Responsive and Attractive user interface and user-friendly website.
+- This site build with React.js, Node.js, Express.js, MongoDB, Firebase, Stripe(payment system) and many more.
 
 ### Uses Technologies
 
