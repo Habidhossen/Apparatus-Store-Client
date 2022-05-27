@@ -1,7 +1,6 @@
 import React from "react";
 
 const ManageProductsRow = ({ product, setDeletingProduct, refetch }) => {
-  console.log(product);
   const { name, img, price, availableQuantity, minimumOrderQuantity } = product;
 
   return (

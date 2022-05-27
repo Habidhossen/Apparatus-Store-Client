@@ -25,7 +25,7 @@ const ManageProducts = () => {
     <div>
       <div className="overflow-x-auto p-4">
         <h1 className="text-2xl font-bold mb-4">
-          All products ({products.length})
+          All Products ({products.length})
         </h1>
         <table className="table table-compact w-full">
           <thead>
