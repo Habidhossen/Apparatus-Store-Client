@@ -1,20 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import auth from "../../../Firebase/firebase.init";
-import DeleteConfirmModal from "../DeleteConfirmModal/DeleteConfirmModal";
+import Loading from "../../Shared/Loading/Loading";
+import DeleteOrder from "../DeleteOrder/DeleteOrder";
 import MyOrderRow from "../MyOrderRow/MyOrderRow";
 
 const MyOrder = () => {
   const [user] = useAuthState(auth); // get user info from useAuthState
-  const [orders, setOrders] = useState([]);
   const [deletingOrder, setDeletingOrder] = useState(null);
 
-  useEffect(() => {
-    const url = `https://guarded-reaches-73348.herokuapp.com/order/${user.email}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setOrders(data));
-  }, []);
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery("orders", () =>
+    fetch(
+      `https://guarded-reaches-73348.herokuapp.com/order/${user.email}`
+    ).then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div>
@@ -46,7 +54,9 @@ const MyOrder = () => {
       </div>
 
       {/* Delete Modal */}
-      {deletingOrder && <DeleteConfirmModal deletingOrder={deletingOrder} />}
+      {deletingOrder && (
+        <DeleteOrder deletingOrder={deletingOrder} refetch={refetch} />
+      )}
     </div>
   );
 };

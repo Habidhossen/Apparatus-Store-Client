@@ -1,6 +1,6 @@
 import React from "react";
 
-const MyOrderRow = ({ order, setDeletingOrder }) => {
+const MyOrderRow = ({ order, setDeletingOrder, refetch }) => {
   const {
     _id,
     productName,

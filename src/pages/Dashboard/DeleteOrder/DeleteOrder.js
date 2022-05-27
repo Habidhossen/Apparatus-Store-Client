@@ -1,25 +1,28 @@
 import React from "react";
+import { toast } from "react-toastify";
 
-const DeleteConfirmModal = ({ deletingOrder, setDeletingOrder }) => {
-  const { _id } = deletingOrder;
+const DeleteOrder = ({ deletingOrder, setDeletingOrder, refetch }) => {
+  const { _id, productName } = deletingOrder;
 
   const handleOrderDelete = () => {
     console.log(_id);
-    // fetch(`https://secret-dusk-46242.herokuapp.com/doctor/${email}`, {
-    //   method: "DELETE",
-    //   headers: {
-    //     authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-    //   },
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     if (data.deletedCount) {
-    //       toast.success(`Doctor: ${name} is deleted.`);
-    //       setDeletingDoctor(null);
-    //       refetch();
-    //     }
-    //   });
+    fetch(`http://localhost:5000/order/${_id}`, {
+      method: "DELETE",
+      // headers: {
+      //   authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      // },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount) {
+          toast.success(`Order: ${productName} is deleted successfully`, {
+            theme: "colored",
+            autoClose: 2000,
+          });
+          refetch();
+        }
+      });
   };
 
   return (
@@ -57,4 +60,4 @@ const DeleteConfirmModal = ({ deletingOrder, setDeletingOrder }) => {
   );
 };
 
-export default DeleteConfirmModal;
+export default DeleteOrder;
