@@ -9,7 +9,7 @@ const Reviews = () => {
     isLoading,
     refetch,
   } = useQuery("reviews", () =>
-    fetch(`https://guarded-reaches-73348.herokuapp.com/review`).then((res) =>
+    fetch("https://guarded-reaches-73348.herokuapp.com/review").then((res) =>
       res.json()
     )
   );

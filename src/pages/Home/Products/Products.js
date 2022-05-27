@@ -9,7 +9,7 @@ const Products = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch(`https://guarded-reaches-73348.herokuapp.com/product`).then((res) =>
+    fetch("https://guarded-reaches-73348.herokuapp.com/product").then((res) =>
       res.json()
     )
   );
