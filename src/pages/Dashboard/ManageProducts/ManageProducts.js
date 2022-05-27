@@ -1,11 +1,25 @@
-import React from "react";
-import useProducts from "../../../hooks/useProducts";
+import React, { useState } from "react";
+import { useQuery } from "react-query";
+import Loading from "../../Shared/Loading/Loading";
+import DeleteProduct from "../DeleteProduct/DeleteProduct";
 import ManageProductsRow from "../ManageProductsRow/ManageProductsRow";
 
 const ManageProducts = () => {
-  const [products, setProducts] = useProducts();
+  const [deletingProduct, setDeletingProduct] = useState(null);
 
-  console.log(products);
+  const {
+    data: products,
+    isLoading,
+    refetch,
+  } = useQuery("products", () =>
+    fetch("https://guarded-reaches-73348.herokuapp.com/product/").then((res) =>
+      res.json()
+    )
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div>
@@ -26,11 +40,20 @@ const ManageProducts = () => {
           </thead>
           <tbody>
             {products.map((product) => (
-              <ManageProductsRow key={product._id} product={product} />
+              <ManageProductsRow
+                key={product._id}
+                product={product}
+                setDeletingProduct={setDeletingProduct}
+                refetch={refetch}
+              />
             ))}
           </tbody>
         </table>
       </div>
+      {/* Delete Modal */}
+      {deletingProduct && (
+        <DeleteProduct deletingProduct={deletingProduct} refetch={refetch} />
+      )}
     </div>
   );
 };

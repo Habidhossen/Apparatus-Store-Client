@@ -1,6 +1,6 @@
 import React from "react";
 
-const ManageProductsRow = ({ product }) => {
+const ManageProductsRow = ({ product, setDeletingProduct, refetch }) => {
   console.log(product);
   const { name, img, price, availableQuantity, minimumOrderQuantity } = product;
 
@@ -19,12 +19,13 @@ const ManageProductsRow = ({ product }) => {
       <td>{minimumOrderQuantity}</td>
 
       <td>
-        {/* <label
-          htmlFor="order-delete"
+        <label
+          onClick={() => setDeletingProduct(product)}
+          for="product-delete"
           className="btn btn-xs btn-error capitalize text-white ml-2"
         >
-          Cancel
-        </label> */}
+          Delete
+        </label>
       </td>
     </tr>
   );
