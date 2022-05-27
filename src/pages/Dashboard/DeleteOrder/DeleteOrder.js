@@ -5,16 +5,11 @@ const DeleteOrder = ({ deletingOrder, setDeletingOrder, refetch }) => {
   const { _id, productName } = deletingOrder;
 
   const handleOrderDelete = () => {
-    console.log(_id);
     fetch(`http://localhost:5000/order/${_id}`, {
       method: "DELETE",
-      // headers: {
-      //   authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      // },
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.deletedCount) {
           toast.success(`Order: ${productName} is deleted successfully`, {
             theme: "colored",

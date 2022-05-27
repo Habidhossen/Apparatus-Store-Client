@@ -14,8 +14,6 @@ const MyOrderRow = ({ order, setDeletingOrder, refetch }) => {
     paid,
   } = order;
 
-  console.log(order);
-
   return (
     <tr className="hover">
       <th>{productName}</th>

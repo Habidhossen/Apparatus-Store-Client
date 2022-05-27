@@ -5,6 +5,7 @@ import Blogs from "./pages/Blogs/Blogs";
 import AddProduct from "./pages/Dashboard/AddProduct/AddProduct";
 import AddReview from "./pages/Dashboard/AddReview/AddReview";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
+import MakeAdmin from "./pages/Dashboard/MakeAdmin/MakeAdmin";
 import ManageAllOrders from "./pages/Dashboard/ManageAllOrders/ManageAllOrders";
 import ManageProducts from "./pages/Dashboard/ManageProducts/ManageProducts";
 import MyOrder from "./pages/Dashboard/MyOrder/MyOrder";
@@ -52,6 +53,7 @@ function App() {
           <Route path="add-product" element={<AddProduct />} />
           <Route path="manage-product" element={<ManageProducts />} />
           <Route path="manage-order" element={<ManageAllOrders />} />
+          <Route path="make-admin" element={<MakeAdmin />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -36,7 +36,7 @@ const Payment = () => {
           </h1>
           <h3>
             Payment for{" "}
-            <span className="font-bold">{orderedProduct.productName}</span>
+            <span className="font-bold">{orderedProduct?.productName}</span>
           </h3>
           <p>Email: {orderedProduct.email}</p>
           <h1 className="text-xl font-bold">
