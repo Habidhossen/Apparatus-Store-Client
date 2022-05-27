@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MyOrderRow = ({ order, setDeletingOrder, refetch }) => {
   const {
@@ -10,7 +11,10 @@ const MyOrderRow = ({ order, setDeletingOrder, refetch }) => {
     address,
     orderQuantity,
     totalPrice,
+    paid,
   } = order;
+
+  console.log(order);
 
   return (
     <tr className="hover">
@@ -22,9 +26,17 @@ const MyOrderRow = ({ order, setDeletingOrder, refetch }) => {
       <td>{orderQuantity}</td>
       <td>{totalPrice}</td>
       <td>
-        <button className="btn btn-xs btn-success capitalize text-white">
-          Payment
-        </button>
+        {paid ? (
+          <span class="badge badge-info text-white text-xs">Paid</span>
+        ) : (
+          <Link
+            to={`/dashboard/payment/${_id}`}
+            className="btn btn-xs btn-success capitalize text-white"
+          >
+            Payment
+          </Link>
+        )}
+
         <label
           onClick={() => setDeletingOrder(order)}
           for="order-delete"

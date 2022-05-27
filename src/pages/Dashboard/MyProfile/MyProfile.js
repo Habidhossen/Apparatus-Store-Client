@@ -1,8 +1,10 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth); // get user info from useAuthState
@@ -14,10 +16,20 @@ const MyProfile = () => {
     reset,
   } = useForm();
 
+  // get data from DB
+  const { data, isLoading, refetch } = useQuery("user", () =>
+    fetch(`http://localhost:5000/user/${user.email}`).then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  // handle submit button
   const onSubmit = (data) => {
     // send data to the server
-    fetch("https://guarded-reaches-73348.herokuapp.com/user", {
-      method: "POST",
+    fetch(`http://localhost:5000/user/${user.email}`, {
+      method: "PUT",
       headers: {
         "Content-type": "application/json",
       },
@@ -76,6 +88,7 @@ const MyProfile = () => {
               </label>
               <input
                 type="text"
+                // defaultValue={data.phone ? data.phone : "phone"}
                 placeholder="Phone"
                 className="input input-bordered"
                 {...register("phone", { required: true })}

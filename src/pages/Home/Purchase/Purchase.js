@@ -75,12 +75,20 @@ const Purchase = () => {
           <h1 className="text-2xl font-bold">{product.name}</h1>
           <p className="text-sm mt-2">ID: {product._id}</p>
 
-          <h3>Price: TK {product.price}</h3>
-          <h1>description: {product.desc}</h1>
-          <h1>available Quantity: {product.availableQuantity}</h1>
-          <h1>minimum Order Quantity: {product.minimumOrderQuantity}</h1>
+          <h3 className="text-xl font-bold">
+            Price: <b>${product.price}</b>
+          </h3>
+          <h1>Description: {product.desc}</h1>
+          <h1>
+            Available Quantity: <b>{product.availableQuantity}</b>
+          </h1>
+          <h1>
+            Minimum Order Quantity: <b>{product.minimumOrderQuantity}</b>
+          </h1>
 
-          <h1>Total Price: {productTotalPrice}</h1>
+          <h1 className="text-2xl font-bold mt-3">
+            Total Price: {productTotalPrice}
+          </h1>
         </div>
         <div>
           <div className="card shadow-sm bg-base-100">
