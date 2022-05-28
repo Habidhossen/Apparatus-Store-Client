@@ -10,13 +10,15 @@ const MyOrder = () => {
   const [user] = useAuthState(auth); // get user info from useAuthState
   const [deletingOrder, setDeletingOrder] = useState(null);
 
+  const email = user?.email;
+
   const {
     data: orders,
     isLoading,
     refetch,
   } = useQuery("orders", () =>
     fetch(
-      `https://guarded-reaches-73348.herokuapp.com/order/${user?.email}`
+      `https://guarded-reaches-73348.herokuapp.com/order?email=${email}`
     ).then((res) => res.json())
   );
 
