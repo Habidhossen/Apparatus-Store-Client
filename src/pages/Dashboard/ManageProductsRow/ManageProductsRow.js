@@ -20,7 +20,7 @@ const ManageProductsRow = ({ product, setDeletingProduct, refetch }) => {
       <td>
         <label
           onClick={() => setDeletingProduct(product)}
-          for="product-delete"
+          htmlFor="product-delete"
           className="btn btn-xs btn-error capitalize text-white ml-2"
         >
           Delete

@@ -24,15 +24,17 @@ const ManageOrdersRow = ({ order, setDeletingOrder, refetch }) => {
       <td>{totalPrice}</td>
       <td>
         {paid ? (
-          <span class="badge badge-warning text-white text-xs">Pending</span>
+          <span className="badge badge-warning text-white text-xs">
+            Pending
+          </span>
         ) : (
-          <span class="badge badge-info text-white text-xs">Unpaid</span>
+          <span className="badge badge-info text-white text-xs">Unpaid</span>
         )}
 
         {paid || (
           <label
             onClick={() => setDeletingOrder(order)}
-            for="order-delete"
+            htmlFor="order-delete"
             className="btn btn-xs btn-error capitalize text-white ml-2"
           >
             Cancel

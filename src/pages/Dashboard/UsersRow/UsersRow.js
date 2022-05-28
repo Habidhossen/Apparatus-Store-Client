@@ -32,13 +32,13 @@ const UsersRow = ({ user, refetch }) => {
             Make Admin
           </button>
         ) : (
-          <span class="badge badge-success text-white text-xs font-bold">
+          <span className="badge badge-success text-white text-xs font-bold">
             Already an Admin
           </span>
         )}
 
         {/* {paid ? (
-          <span class="badge badge-info text-white text-xs">Paid</span>
+          <span className="badge badge-info text-white text-xs">Paid</span>
         ) : (
           <Link
             to={`/dashboard/payment/${_id}`}
@@ -51,7 +51,7 @@ const UsersRow = ({ user, refetch }) => {
         {paid || (
           <label
             onClick={() => setDeletingOrder(order)}
-            for="order-delete"
+            htmlFor="order-delete"
             className="btn btn-xs btn-error capitalize text-white ml-2"
           >
             Cancel

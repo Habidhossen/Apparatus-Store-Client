@@ -32,7 +32,7 @@ const MyProfile = () => {
   // handle submit button
   const onSubmit = (data) => {
     // send data to the server
-    fetch(`https://guarded-reaches-73348.herokuapp.com/user?email=${email}`, {
+    fetch(`https://guarded-reaches-73348.herokuapp.com/user/${email}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

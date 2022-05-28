@@ -28,9 +28,9 @@ const MyOrder = () => {
 
   return (
     <div>
-      <div class="overflow-x-auto p-4">
+      <div className="overflow-x-auto p-4">
         <h1 className="text-2xl font-bold mb-4">My Orders ({orders.length})</h1>
-        <table class="table table-compact w-full">
+        <table className="table table-compact w-full">
           <thead>
             <tr>
               <th>Product</th>

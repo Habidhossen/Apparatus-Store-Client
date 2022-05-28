@@ -25,7 +25,7 @@ const MyOrderRow = ({ order, setDeletingOrder, refetch }) => {
       <td>{totalPrice}</td>
       <td>
         {paid ? (
-          <span class="badge badge-info text-white text-xs">Paid</span>
+          <span className="badge badge-info text-white text-xs">Paid</span>
         ) : (
           <Link
             to={`/dashboard/payment/${_id}`}
@@ -38,7 +38,7 @@ const MyOrderRow = ({ order, setDeletingOrder, refetch }) => {
         {paid || (
           <label
             onClick={() => setDeletingOrder(order)}
-            for="order-delete"
+            htmlFor="order-delete"
             className="btn btn-xs btn-error capitalize text-white ml-2"
           >
             Cancel

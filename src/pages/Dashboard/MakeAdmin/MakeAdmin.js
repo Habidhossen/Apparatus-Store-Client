@@ -21,11 +21,11 @@ const MakeAdmin = () => {
 
   return (
     <div>
-      <div class="overflow-x-auto p-4">
+      <div className="overflow-x-auto p-4">
         <h1 className="text-2xl font-bold mb-4">
           Total Members ({users.length})
         </h1>
-        <table class="table table-compact w-full">
+        <table className="table table-compact w-full">
           <thead>
             <tr>
               <th>Name</th>
