@@ -16,7 +16,7 @@ const MyOrder = () => {
     refetch,
   } = useQuery("orders", () =>
     fetch(
-      `https://guarded-reaches-73348.herokuapp.com/order/${user.email}`
+      `https://guarded-reaches-73348.herokuapp.com/order/${user?.email}`
     ).then((res) => res.json())
   );
 
