@@ -9,6 +9,8 @@ import Loading from "../../Shared/Loading/Loading";
 const MyProfile = () => {
   const [user] = useAuthState(auth); // get user info from useAuthState
 
+  const email = user?.email;
+
   const {
     register,
     formState: { errors },
@@ -19,7 +21,7 @@ const MyProfile = () => {
   // get data from DB
   const { data, isLoading, refetch } = useQuery("user", () =>
     fetch(
-      `https://guarded-reaches-73348.herokuapp.com/user/${user.email}`
+      `https://guarded-reaches-73348.herokuapp.com/user?email=${email}`
     ).then((res) => res.json())
   );
 
@@ -30,7 +32,7 @@ const MyProfile = () => {
   // handle submit button
   const onSubmit = (data) => {
     // send data to the server
-    fetch(`https://guarded-reaches-73348.herokuapp.com/user/${user.email}`, {
+    fetch(`https://guarded-reaches-73348.herokuapp.com/user?email=${email}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
