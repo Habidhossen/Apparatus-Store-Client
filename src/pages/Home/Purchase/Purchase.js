@@ -24,9 +24,9 @@ const Purchase = () => {
     isLoading,
     refetch,
   } = useQuery("product", () =>
-    fetch(
-      `https://guarded-reaches-73348.herokuapp.com/product/${productID}`
-    ).then((res) => res.json())
+    fetch(`http://localhost:5000/product/${productID}`).then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -55,7 +55,7 @@ const Purchase = () => {
     };
 
     // send data to the server
-    const url = "https://guarded-reaches-73348.herokuapp.com/order";
+    const url = "http://localhost:5000/order";
     fetch(url, {
       method: "POST",
       headers: {

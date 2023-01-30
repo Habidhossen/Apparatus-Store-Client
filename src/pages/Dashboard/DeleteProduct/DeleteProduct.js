@@ -6,7 +6,7 @@ const DeleteProduct = ({ deletingProduct, refetch }) => {
 
   const handleProductDelete = () => {
     console.log(_id);
-    fetch(`https://guarded-reaches-73348.herokuapp.com/product/${_id}`, {
+    fetch(`http://localhost:5000/product/${_id}`, {
       method: "DELETE",
       // headers: {
       //   authorization: `Bearer ${localStorage.getItem("accessToken")}`,

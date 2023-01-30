@@ -12,7 +12,7 @@ const AddProduct = () => {
 
   const onSubmit = (data) => {
     // send data to the server
-    fetch("https://guarded-reaches-73348.herokuapp.com/product", {
+    fetch("http://localhost:5000/product", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

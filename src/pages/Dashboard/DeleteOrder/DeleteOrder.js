@@ -5,7 +5,7 @@ const DeleteOrder = ({ deletingOrder, setDeletingOrder, refetch }) => {
   const { _id, productName } = deletingOrder;
 
   const handleOrderDelete = () => {
-    fetch(`https://guarded-reaches-73348.herokuapp.com/order/${_id}`, {
+    fetch(`http://localhost:5000/order/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -12,9 +12,7 @@ const ManageAllOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch("https://guarded-reaches-73348.herokuapp.com/order/").then((res) =>
-      res.json()
-    )
+    fetch("http://localhost:5000/order/").then((res) => res.json())
   );
 
   if (isLoading) {

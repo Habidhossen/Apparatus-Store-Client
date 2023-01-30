@@ -20,9 +20,7 @@ const MyProfile = () => {
 
   // get data from DB
   const { data, isLoading, refetch } = useQuery("user", () =>
-    fetch(
-      `https://guarded-reaches-73348.herokuapp.com/user?email=${email}`
-    ).then((res) => res.json())
+    fetch(`http://localhost:5000/user?email=${email}`).then((res) => res.json())
   );
 
   if (isLoading) {
@@ -32,7 +30,7 @@ const MyProfile = () => {
   // handle submit button
   const onSubmit = (data) => {
     // send data to the server
-    fetch(`https://guarded-reaches-73348.herokuapp.com/user/${email}`, {
+    fetch(`http://localhost:5000/user/${email}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

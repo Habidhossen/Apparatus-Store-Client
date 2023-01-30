@@ -13,7 +13,7 @@ const stripePromise = loadStripe(
 const Payment = () => {
   const { id } = useParams();
 
-  const url = `https://guarded-reaches-73348.herokuapp.com/order/${id}`;
+  const url = `http://localhost:5000/order/${id}`;
   const {
     data: orderedProduct,
     isLoading,

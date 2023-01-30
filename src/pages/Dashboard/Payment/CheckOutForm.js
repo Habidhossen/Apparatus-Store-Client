@@ -22,7 +22,7 @@ const CheckOutForm = ({ orderedProduct }) => {
   } = orderedProduct;
 
   useEffect(() => {
-    fetch("https://guarded-reaches-73348.herokuapp.com/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -85,7 +85,7 @@ const CheckOutForm = ({ orderedProduct }) => {
         appointment: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://guarded-reaches-73348.herokuapp.com/order/${_id}`, {
+      fetch(`http://localhost:5000/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
