@@ -1,24 +1,49 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#ef233c",
+        secondary: "#ff6400",
+        accent: "#00a9a4",
+        heading: "#28214c",
+        headingDark: "#212529",
+        text: "#555555",
+        lightGrey: "#fafafa",
+        lightBlue: "#eaf6f6",
+        lightOrange: "#feead1",
+      },
+      fontFamily: {
+        krub: ["Krub", "sans-serif"],
+      },
+      screens: {
+        sm: "576px",
+        // => @media (min-width: 640px) { ... }
+
+        md: "768px",
+        // => @media (min-width: 768px) { ... }
+
+        lg: "1024px",
+        // => @media (min-width: 1024px) { ... }
+      },
+    },
   },
   daisyui: {
     themes: [
       {
         primaryTheme: {
-          primary: "#fdb819",
-          secondary: "#1d4684",
-          accent: "#43aee1",
+          primary: "#ef233c",
+          secondary: "#ff6400",
+          accent: "#00a9a4",
           neutral: "#172b34",
-          info: "#5e7dd9",
-          success: "#13aa75",
-          warning: "#f69c18",
-          error: "#f21842",
+          info: "#0dcaf0",
+          success: "#12B886",
+          warning: "#FFD43B",
+          error: "#F03E3E",
           "base-100": "#ffffff",
         },
       },
-      // "dark",
       "cupcake",
     ],
   },

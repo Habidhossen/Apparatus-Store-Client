@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Krub:wght@300;400;500;600;700&display=swap");
 
 /* reset all default styles (margin, padding) */
 * {
@@ -9,5 +9,19 @@
 
 /* body styles */
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Krub", sans-serif;
+}
+
+/* styles variable declare  */
+:root {
+  --font-Krub: "Krub", sans-serif;
+  --color-primary: #ef233c;
+  --color-secondary: #ff6400;
+  --color-accent: #00a9a4;
+  --color-heading: #28214c;
+  --color-headingDark: #212529;
+  --color-text: #555555;
+  --color-lightGrey: #fafafa;
+  --color-lightBlue: #eaf6f6;
+  --color-lightOrange: #feead1;
 }

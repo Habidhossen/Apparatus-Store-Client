@@ -1,0 +1,20 @@
+/* Customize the Navigation-bar */
+.nav-brand {
+  font-family: var(--font-krub);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+.nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-heading) !important;
+  background-color: transparent !important;
+}
+.nav-link:focus {
+  color: var(--color-primary) !important;
+  font-weight: bold;
+}
+.nav-link:hover {
+  color: var(--color-primary) !important;
+}

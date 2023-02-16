@@ -2,8 +2,8 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
+import "../../../assets/styles/style.css";
 import auth from "../../../Firebase/firebase.init";
-import "./Navbar.css";
 
 const Navbar = () => {
   const [user] = useAuthState(auth); // get user info from useAuthState
@@ -16,30 +16,38 @@ const Navbar = () => {
   const menuItems = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="nav-link" to="/">
+          Home
+        </NavLink>
       </li>
       {user && (
         <li>
-          <NavLink to="/dashboard">Dashboard</NavLink>
+          <NavLink className="nav-link" to="/dashboard">
+            Dashboard
+          </NavLink>
         </li>
       )}
       <li>
-        <NavLink to="/blogs">Blogs</NavLink>
+        <NavLink className="nav-link" to="/blogs">
+          Blogs
+        </NavLink>
       </li>
       <li>
         {user ? (
-          <button onClick={logout} className="text-error">
+          <button onClick={logout} className="nav-link">
             Logout
           </button>
         ) : (
-          <NavLink to="/login">Login</NavLink>
+          <NavLink className="nav-link" to="/login">
+            Login
+          </NavLink>
         )}
       </li>
     </>
   );
 
   return (
-    <div className="navbar sticky top-0 z-50 backdrop-filter backdrop-blur-2xl py-3 lg:px-12">
+    <div className="navbar sticky top-0 z-50 backdrop-filter backdrop-blur-3xl py-3 lg:px-12">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">

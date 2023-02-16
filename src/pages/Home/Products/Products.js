@@ -19,7 +19,7 @@ const Products = () => {
   return (
     <section className="my-20">
       <h1 className="text-4xl font-extrabold text-center mb-6">Our Tools</h1>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-16">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-16">
         {products
           .map((singleProduct) => (
             <Tool key={singleProduct._id} singleProduct={singleProduct} />

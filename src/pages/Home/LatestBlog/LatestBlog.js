@@ -24,11 +24,18 @@ const LatestBlog = () => {
       date: "24 May, 2022",
       img: "https://i.ibb.co/djbGgNj/tools3.png",
     },
+    {
+      _id: 4,
+      title: "How do You Feel About 1″ Screwdriver Bits?",
+      desc: "Generally, if using this type of screwdriver bit in a power tool, you must also use a bit holder, adapter, or extension.",
+      date: "24 May, 2022",
+      img: "https://i.ibb.co/djbGgNj/tools3.png",
+    },
   ];
   return (
     <section className="my-20">
       <h1 className="text-4xl font-extrabold text-center mb-6">Latest Blog</h1>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-16">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-16">
         {latestBlog
           .map((blog) => <BlogCard key={blog._id} blog={blog} />)
           .reverse()}
