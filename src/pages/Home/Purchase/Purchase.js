@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { BsCartCheck, BsCheck2Circle } from "react-icons/bs";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
@@ -73,34 +74,42 @@ const Purchase = () => {
   };
 
   return (
-    <section className="bg-gray-50 px-12 py-6">
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div className="card shadow-sm bg-base-100">
-          {" "}
-          <img src={product.img} alt="" />
-        </div>
-        <div className="card shadow-sm bg-base-100 p-6">
-          <h1 className="text-2xl font-bold">{product.name}</h1>
-          <p className="text-sm mt-2">ID: {product._id}</p>
-
-          <h3 className="text-xl font-bold">
-            Price: <b>${product.price}</b>
-          </h3>
-          <h1>Description: {product.desc}</h1>
-          <h1>
-            Available Quantity: <b>{product.availableQuantity}</b>
-          </h1>
-          <h1>
-            Minimum Order Quantity: <b>{product.minimumOrderQuantity}</b>
-          </h1>
-
-          <h1 className="text-2xl font-bold mt-3">
-            Total Price: {productTotalPrice}
-          </h1>
+    <section className="bg-gray-50 px-40 py-4">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div className="card space-y-2 shadow-xs rounded-lg bg-base-100 p-6">
+          <div className="flex justify-center">
+            <img className="w-72" src={product.img} alt="" />
+          </div>
+          <p className="text-sm text-text">Product ID: {product._id}</p>
+          <h1 className="text-2xl text-heading font-bold">{product.name}</h1>
+          <div className="flex items-center gap-3">
+            <del className="text-lg text-text font-semibold">
+              ${Number(product.price) + 100}
+            </del>
+            <h6 className="text-2xl font-bold text-primary">
+              ${product.price}
+            </h6>
+          </div>
+          <h6 className="flex items-center gap-1 text-sm text-text font-semibold">
+            <BsCheck2Circle className="text-secondary" /> Available Quantity:{" "}
+            <span className="text-accent font-bold">
+              {product.availableQuantity}
+            </span>
+          </h6>
+          <h6 className="flex items-center gap-1 text-sm text-text font-semibold">
+            <BsCheck2Circle className="text-secondary" /> Minimum Order
+            Quantity:{" "}
+            <span className="text-accent font-bold">
+              {product.minimumOrderQuantity}
+            </span>
+          </h6>
         </div>
         <div>
-          <div className="card shadow-sm bg-base-100">
+          <div className="card shadow-sm rounded-lg bg-base-100">
             <div className="card-body">
+              <h1 className="text-xl font-bold text-center mb-6">
+                Place your order now
+              </h1>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control">
                   <label className="label">
@@ -209,11 +218,52 @@ const Purchase = () => {
                   )}
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">Order</button>
+                  <button className="flex items-center justify-center gap-2 w-full bg-accent hover:bg-teal-600 transition duration-150 text-white text-sm font-semibold py-3 rounded">
+                    Place Order <BsCartCheck />
+                  </button>
                 </div>
               </form>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Description Collapse */}
+      <div
+        tabIndex={0}
+        className="collapse collapse-plus bg-base-100 rounded-lg mt-4"
+      >
+        <input type="checkbox" />
+        <div className="collapse-title text-md font-semibold text-heading">
+          Description
+        </div>
+        <div className="collapse-content">
+          <p className="text-sm text-text">{product.desc}</p>
+        </div>
+      </div>
+      {/* Refund Policy Collapse */}
+      <div
+        tabIndex={0}
+        className="collapse collapse-plus bg-base-100 rounded-lg mt-1 mb-4"
+      >
+        <input type="checkbox" />
+        <div className="collapse-title text-md font-semibold text-heading">
+          Refund Policy
+        </div>
+        <div className="collapse-content">
+          <p className="text-sm text-text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi
+            libero cupiditate corporis cumque cum, nulla quis consectetur amet
+            in aut, magnam maxime iste velit voluptatum odio fuga. Odio ut ab
+            facere libero minus quasi ipsum hic aliquam itaque, deserunt
+            obcaecati perspiciatis illum? Dolore placeat tempore quis possimus
+            magnam, molestiae excepturi! Asperiores harum ullam quod explicabo
+            necessitatibus suscipit aliquid maiores saepe ducimus quos. Quisquam
+            incidunt sapiente error voluptas sit! Ut molestiae laboriosam quam
+            eaque perspiciatis, eligendi earum itaque illo in illum, odit quasi
+            sequi dolor debitis delectus blanditiis nobis totam culpa. Quasi,
+            porro pariatur. Perferendis, a! Id quibusdam vero veniam cupiditate.
+          </p>
         </div>
       </div>
       <ToastContainer />
