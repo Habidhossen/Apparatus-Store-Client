@@ -20,6 +20,16 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink className="nav-link" to="/products">
+          Products
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="nav-link" to="/news">
+          News
+        </NavLink>
+      </li>
       {user && (
         <li>
           <NavLink className="nav-link" to="/dashboard">
@@ -28,17 +38,23 @@ const Navbar = () => {
         </li>
       )}
       <li>
-        <NavLink className="nav-link" to="/blogs">
-          Blogs
+        <NavLink className="nav-link" to="/about">
+          About us
         </NavLink>
       </li>
       <li>
         {user ? (
-          <button onClick={logout} className="nav-link">
+          <button
+            onClick={logout}
+            className="flex items-center justify-center gap-2 bg-primary hover:bg-rose-600 transition duration-150 text-white text-md font-semibold px-8 py-2 rounded"
+          >
             Logout
           </button>
         ) : (
-          <NavLink className="nav-link" to="/login">
+          <NavLink
+            className="flex items-center justify-center gap-2 bg-accent hover:bg-teal-600 transition duration-150 text-white text-md font-semibold px-8 py-2 rounded"
+            to="/login"
+          >
             Login
           </NavLink>
         )}
@@ -47,7 +63,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar sticky top-0 z-50 backdrop-filter backdrop-blur-3xl py-3 lg:px-12">
+    <div className="navbar sticky top-0 z-50 backdrop-filter backdrop-blur-xl py-3 lg:px-20">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
