@@ -50,7 +50,7 @@ const LatestBlog = () => {
         </div>
       </div>
       <hr className="mb-5" />
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {latestBlog
           .map((blog) => <BlogCard key={blog._id} blog={blog} />)
           .reverse()}
