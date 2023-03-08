@@ -20,8 +20,6 @@ const Payment = () => {
     refetch,
   } = useQuery("orderedProduct", () => fetch(url).then((res) => res.json()));
 
-  console.log(orderedProduct);
-
   if (isLoading) {
     return <Loading />;
   }
