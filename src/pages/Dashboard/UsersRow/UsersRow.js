@@ -27,12 +27,12 @@ const UsersRow = ({ user, refetch }) => {
         {role !== "admin" ? (
           <button
             onClick={makeAdmin}
-            className="btn btn-info btn-xs text-gray-100 text-xs"
+            className="btn btn-neutral btn-xs text-white text-xs capitalize"
           >
             Make Admin
           </button>
         ) : (
-          <span className="badge badge-success text-white text-xs font-bold">
+          <span className="badge badge-success text-white text-xs font-semibold">
             Already an Admin
           </span>
         )}

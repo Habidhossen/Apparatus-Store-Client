@@ -21,9 +21,7 @@ const ManageAllOrders = () => {
   return (
     <div>
       <div className="overflow-x-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">
-          All Orders ({orders.length})
-        </h1>
+        <h1 className="text-xl font-bold mb-6">All Orders ({orders.length})</h1>
         <table className="table table-compact w-full">
           <thead>
             <tr>

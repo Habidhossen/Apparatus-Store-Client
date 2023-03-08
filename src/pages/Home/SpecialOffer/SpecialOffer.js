@@ -17,7 +17,7 @@ const SpecialOffer = () => {
       </p>
       <Link
         to="all-products"
-        className="flex items-center gap-2 text-sm font-bold text-primary hover:text-accent transition duration-300"
+        className="w-24 flex items-center gap-2 text-sm font-bold text-primary hover:text-accent transition duration-300"
       >
         Shop now <FaLongArrowAltRight />
       </Link>

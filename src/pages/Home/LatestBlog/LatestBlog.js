@@ -1,39 +1,23 @@
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import Loading from "../../Shared/Loading/Loading";
 import BlogCard from "../BlogCard/BlogCard";
 
 const LatestBlog = () => {
-  const latestBlog = [
-    {
-      _id: 1,
-      title: "The Fenrir Screw Gripper is a Promising New Accessory",
-      desc: "The Fenrir is a screw and fastener-gripping attachment that can be used with most cordless drills and locking screwdriver handles.",
-      date: "10 May, 2022",
-      img: "https://i.ibb.co/zmDVdZc/tools1.png",
-    },
-    {
-      _id: 2,
-      title: "Multi-Bit vs. Individual Screwdrivers – You Have to Pick!",
-      desc: "Multi-bit screwdrivers excel in giving you x-number of screwdriver sizes and styles in a compact package.",
-      date: "20 May, 2022",
-      img: "https://i.ibb.co/yYnzpMz/tools2.png",
-    },
-    {
-      _id: 3,
-      title: "How do You Feel About 1″ Screwdriver Bits?",
-      desc: "Generally, if using this type of screwdriver bit in a power tool, you must also use a bit holder, adapter, or extension.",
-      date: "24 May, 2022",
-      img: "https://i.ibb.co/djbGgNj/tools3.png",
-    },
-    {
-      _id: 4,
-      title: "How do You Feel About 1″ Screwdriver Bits?",
-      desc: "Generally, if using this type of screwdriver bit in a power tool, you must also use a bit holder, adapter, or extension.",
-      date: "24 May, 2022",
-      img: "https://i.ibb.co/djbGgNj/tools3.png",
-    },
-  ];
+  const {
+    data: blogs,
+    isLoading,
+    refetch,
+  } = useQuery("blogs", () =>
+    fetch("http://localhost:5000/blog").then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <section className="my-20 mx-20">
       <div className="flex justify-between my-4">
@@ -51,9 +35,7 @@ const LatestBlog = () => {
       </div>
       <hr className="mb-5" />
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {latestBlog
-          .map((blog) => <BlogCard key={blog._id} blog={blog} />)
-          .reverse()}
+        {blogs.map((blog) => <BlogCard key={blog._id} blog={blog} />).reverse()}
       </div>
     </section>
   );

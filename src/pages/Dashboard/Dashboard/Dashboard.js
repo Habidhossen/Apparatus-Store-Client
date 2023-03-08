@@ -43,7 +43,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <Link className="nav-link" to="add-blogs">
+                <Link className="nav-link" to="add-blog">
                   <MdPostAdd /> Add a Blog
                 </Link>
               </li>

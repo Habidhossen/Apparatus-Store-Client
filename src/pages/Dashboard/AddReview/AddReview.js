@@ -33,7 +33,7 @@ const AddReview = () => {
   };
 
   return (
-    <section className="mt-16">
+    <section className="mt-10">
       <div className="card w-96 mx-auto shadow-sm bg-base-100">
         <div className="card-body">
           <h1 className="text-center text-xl font-bold mb-4">Reviews</h1>

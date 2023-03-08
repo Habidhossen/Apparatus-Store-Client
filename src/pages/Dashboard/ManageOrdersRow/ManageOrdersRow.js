@@ -24,11 +24,9 @@ const ManageOrdersRow = ({ order, setDeletingOrder, refetch }) => {
       <td>{totalPrice}</td>
       <td>
         {paid ? (
-          <span className="badge badge-warning text-white text-xs">
-            Pending
-          </span>
+          <span className="badge badge-warning text-text text-xs">Pending</span>
         ) : (
-          <span className="badge badge-info text-white text-xs">Unpaid</span>
+          <span className="badge badge-accent text-white text-xs">Unpaid</span>
         )}
 
         {paid || (
