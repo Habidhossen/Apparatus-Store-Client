@@ -11,6 +11,8 @@ const MyProfile = () => {
 
   const email = user?.email;
 
+  console.log(user);
+
   const {
     register,
     formState: { errors },
@@ -47,115 +49,18 @@ const MyProfile = () => {
   };
 
   return (
-    <section>
-      <div className="card w-96 mx-auto shadow-sm bg-base-100 mt-2">
-        <div className="card-body">
-          <h1 className="text-center text-xl font-bold mb-4">My Profile</h1>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
-                type="text"
-                defaultValue={user?.displayName}
-                className="input input-bordered"
-                {...register("name", { required: true })}
-              />
-              {errors.name && (
-                <span className="label-text-alt text-red-500 mt-2">
-                  Name is Required
-                </span>
-              )}
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="email"
-                value={user?.email}
-                className="input input-bordered"
-                {...register("email", { required: true })}
-              />
-              {errors.email && (
-                <span className="label-text-alt text-red-500 mt-2">
-                  Email is Required
-                </span>
-              )}
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Phone</span>
-              </label>
-              <input
-                type="text"
-                // defaultValue={data.phone ? data.phone : "phone"}
-                placeholder="Phone"
-                className="input input-bordered"
-                {...register("phone", { required: true })}
-              />
-              {errors.phone && (
-                <span className="label-text-alt text-red-500 mt-2">
-                  Phone is Required
-                </span>
-              )}
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Education</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Education"
-                className="input input-bordered"
-                {...register("education", { required: true })}
-              />
-              {errors.education && (
-                <span className="label-text-alt text-red-500 mt-2">
-                  Education is Required
-                </span>
-              )}
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Location</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Location"
-                className="input input-bordered"
-                {...register("location", { required: true })}
-              />
-              {errors.location && (
-                <span className="label-text-alt text-red-500 mt-2">
-                  Location is Required
-                </span>
-              )}
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Linkedin</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Linkedin profile link"
-                className="input input-bordered"
-                {...register("linkedin", { required: true })}
-              />
-              {errors.linkedin && (
-                <span className="label-text-alt text-red-500 mt-2">
-                  Linkedin is Required
-                </span>
-              )}
-            </div>
-
-            <div className="form-control mt-6">
-              <button className="btn btn-success text-white">
-                Update Profile
-              </button>
-            </div>
-          </form>
+    <section className="h-screen">
+      <div className="bg-white w-96 mx-auto mt-10 py-8 px-10 rounded-xl">
+        <h1 className="text-center text-lg font-bold mb-4">My Profile</h1>
+        <hr />
+        <div className="flex items-center gap-4 mt-6">
+          <div>
+            <img className="w-24 rounded-full" src={user?.photoURL} />
+          </div>
+          <div>
+            <p className="text-base font-bold mb-1">{user?.displayName}</p>
+            <p className="text-base">{user?.email}</p>
+          </div>
         </div>
       </div>
     </section>

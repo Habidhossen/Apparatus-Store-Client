@@ -4,10 +4,10 @@ import {
   MdAdminPanelSettings,
   MdManageAccounts,
   MdManageSearch,
-  MdOutlineAddchart,
+  MdOutlineAddBox,
   MdOutlineListAlt,
-  MdOutlineNoteAdd,
   MdOutlineRateReview,
+  MdPostAdd,
   MdSpaceDashboard,
 } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
@@ -39,12 +39,12 @@ const Dashboard = () => {
             <>
               <li>
                 <Link className="nav-link" to="add-product">
-                  <MdOutlineAddchart /> Add a Product
+                  <MdOutlineAddBox /> Add a Product
                 </Link>
               </li>
               <li>
                 <Link className="nav-link" to="add-blogs">
-                  <MdOutlineNoteAdd /> Add a Blog
+                  <MdPostAdd /> Add a Blog
                 </Link>
               </li>
               <li>
