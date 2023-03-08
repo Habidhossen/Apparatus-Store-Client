@@ -12,7 +12,7 @@ const Banner = () => {
       }}
     >
       <div className="mx-20 space-y-3">
-        <h6 className="inline bg-secondary text-white text-xs font-medium px-4 py-1 text-center rounded-xl">
+        <h6 className="inline bg-secondary text-white text-xs font-medium px-4 py-1 text-center rounded-xl capitalize">
           Special Offer for this Week
         </h6>
         <h1 className="text-6xl font-bold uppercase text-white leading-snug">

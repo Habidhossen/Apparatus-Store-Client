@@ -1,5 +1,15 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import {
+  MdAdminPanelSettings,
+  MdManageAccounts,
+  MdManageSearch,
+  MdOutlineAddchart,
+  MdOutlineListAlt,
+  MdOutlineNoteAdd,
+  MdOutlineRateReview,
+  MdSpaceDashboard,
+} from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
@@ -10,7 +20,7 @@ const Dashboard = () => {
   const [admin] = useAdmin(user); //from admin hook
 
   return (
-    <div className="drawer drawer-mobile">
+    <div className="drawer drawer-mobile h-full">
       <input id="side-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content bg-gray-50">
         <Outlet />
@@ -19,31 +29,51 @@ const Dashboard = () => {
         <label htmlFor="side-drawer" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 sm:bg-transparent text-base-content">
           <li>
-            <Link to="">My Profile</Link>
+            <Link className="nav-link" to="">
+              <MdSpaceDashboard />
+              Home
+            </Link>
           </li>
 
           {admin ? (
             <>
               <li>
-                <Link to="add-product">Add a Product</Link>
+                <Link className="nav-link" to="add-product">
+                  <MdOutlineAddchart /> Add a Product
+                </Link>
               </li>
               <li>
-                <Link to="manage-product">Manage Products</Link>
+                <Link className="nav-link" to="add-blogs">
+                  <MdOutlineNoteAdd /> Add a Blog
+                </Link>
               </li>
               <li>
-                <Link to="manage-order">Manage all Orders</Link>
+                <Link className="nav-link" to="manage-product">
+                  <MdManageSearch /> Manage Products
+                </Link>
               </li>
               <li>
-                <Link to="make-admin">Make Admin</Link>
+                <Link className="nav-link" to="manage-order">
+                  <MdManageAccounts /> Manage all Orders
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link" to="make-admin">
+                  <MdAdminPanelSettings /> Make Admin
+                </Link>
               </li>
             </>
           ) : (
             <>
               <li>
-                <Link to="order">My Order</Link>
+                <Link className="nav-link" to="order">
+                  <MdOutlineListAlt /> My Order
+                </Link>
               </li>
               <li>
-                <Link to="review">Add a Review</Link>
+                <Link className="nav-link" to="review">
+                  <MdOutlineRateReview /> Add a Review
+                </Link>
               </li>
             </>
           )}
