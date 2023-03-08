@@ -2,8 +2,8 @@ import React from "react";
 import creditcards from "../../../assets/images/credit-cards.png";
 
 const Footer = () => {
-  // get the current year
-  const year = new Date().getFullYear();
+  const year = new Date().getFullYear(); // get the current year
+
   return (
     <footer className="bg-black text-white py-12">
       <div className="flex flex-col items-center">
