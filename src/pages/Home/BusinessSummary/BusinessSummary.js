@@ -2,11 +2,11 @@ import React from "react";
 
 const BusinessSummary = () => {
   return (
-    <section className="my-20 py-12 bg-slate-800 text-slate-50">
-      <h1 className="text-4xl font-extrabold text-center my-4 uppercase">
+    <section className="my-20 py-16 bg-lightOrange text-heading">
+      <h1 className="text-3xl font-bold text-center my-4 uppercase">
         Million Business Trust Us
       </h1>
-      <p className="text-center text-md uppercase mb-20">
+      <p className="text-base text-center text-md uppercase mb-20">
         We're here to help you to finding a best way
       </p>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -27,8 +27,8 @@ const BusinessSummary = () => {
               />
             </svg>
           </span>
-          <h1 className="text-6xl font-bold my-4">28</h1>
-          <p className="text-xl">Countries</p>
+          <h1 className="text-6xl font-extrabold my-4">28</h1>
+          <p className="text-lg font-semibold">Countries</p>
         </div>
         <div className="text-center flex flex-col items-center">
           <span>
@@ -47,8 +47,8 @@ const BusinessSummary = () => {
               />
             </svg>
           </span>
-          <h1 className="text-6xl font-bold my-4">38K</h1>
-          <p className="text-xl">Happy Clients</p>
+          <h1 className="text-6xl font-extrabold my-4">38K</h1>
+          <p className="text-lg font-semibold">Happy Clients</p>
         </div>
         <div className="text-center flex flex-col items-center">
           <span>
@@ -67,8 +67,8 @@ const BusinessSummary = () => {
               />
             </svg>
           </span>
-          <h1 className="text-6xl font-bold my-4">412+</h1>
-          <p className="text-xl">Feedbacks</p>
+          <h1 className="text-6xl font-extrabold my-4">412+</h1>
+          <p className="text-lg font-semibold">Feedbacks</p>
         </div>
         <div className="text-center flex flex-col items-center">
           <span>
@@ -87,8 +87,8 @@ const BusinessSummary = () => {
               />
             </svg>
           </span>
-          <h1 className="text-6xl font-bold my-4">99+</h1>
-          <p className="text-xl">Tools</p>
+          <h1 className="text-6xl font-extrabold my-4">99+</h1>
+          <p className="text-lg font-semibold">Tools</p>
         </div>
       </div>
     </section>
