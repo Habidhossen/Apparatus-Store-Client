@@ -1,23 +1,19 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const DeleteProduct = ({ deletingProduct, refetch }) => {
-  const { _id, name } = deletingProduct;
-  console.log(deletingProduct);
+const DeleteBlog = ({ deletingBlog, refetch }) => {
+  const { _id, title } = deletingBlog;
 
-  const handleProductDelete = () => {
+  const handleBlogDelete = () => {
     console.log(_id);
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`http://localhost:5000/blog/${_id}`, {
       method: "DELETE",
-      // headers: {
-      //   authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      // },
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         if (data.deletedCount) {
-          toast.success(`Product: ${name} is deleted successfully`, {
+          toast.success(`Blog: ${title} is deleted successfully`, {
             theme: "colored",
             autoClose: 2000,
           });
@@ -28,28 +24,28 @@ const DeleteProduct = ({ deletingProduct, refetch }) => {
 
   return (
     <div>
-      <input type="checkbox" id="product-delete" className="modal-toggle" />
+      <input type="checkbox" id="blog-delete" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <label
-            htmlFor="product-delete"
+            htmlFor="blog-delete"
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
 
-          <h3 className="font-bold text-lg">Delete Product</h3>
+          <h3 className="font-bold text-lg">Delete Blog</h3>
           <p className="py-4">Are you sure want to delete it?</p>
           <div className="modal-action">
             <label
-              htmlFor="product-delete"
+              htmlFor="blog-delete"
               className="btn btn-sm btn-neutral text-white font-normal capitalize"
             >
               No
             </label>
             <label
-              onClick={handleProductDelete}
-              htmlFor="product-delete"
+              onClick={handleBlogDelete}
+              htmlFor="blog-delete"
               className="btn btn-sm btn-error text-white font-normal capitalize"
             >
               Yes
@@ -61,4 +57,4 @@ const DeleteProduct = ({ deletingProduct, refetch }) => {
   );
 };
 
-export default DeleteProduct;
+export default DeleteBlog;

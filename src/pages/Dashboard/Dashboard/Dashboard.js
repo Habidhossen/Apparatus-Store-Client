@@ -53,6 +53,11 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
+                <Link className="nav-link" to="manage-blog">
+                  <MdManageSearch /> Manage Blogs
+                </Link>
+              </li>
+              <li>
                 <Link className="nav-link" to="manage-order">
                   <MdManageAccounts /> Manage all Orders
                 </Link>

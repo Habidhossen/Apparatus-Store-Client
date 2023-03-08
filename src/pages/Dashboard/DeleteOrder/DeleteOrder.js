@@ -32,7 +32,7 @@ const DeleteOrder = ({ deletingOrder, setDeletingOrder, refetch }) => {
             ✕
           </label>
 
-          <h3 className="font-bold text-lg">Delete order</h3>
+          <h3 className="font-bold text-lg">Delete Order</h3>
           <p className="py-4">Are you sure want to delete it?</p>
           <div className="modal-action">
             <label

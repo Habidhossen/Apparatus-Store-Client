@@ -36,6 +36,7 @@ const Products = () => {
       <hr className="mb-5" />
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {products
+          .slice(0, 8)
           .map((singleProduct) => (
             <Tool key={singleProduct._id} singleProduct={singleProduct} />
           ))

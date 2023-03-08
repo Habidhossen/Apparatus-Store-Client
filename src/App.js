@@ -10,6 +10,7 @@ import AddReview from "./pages/Dashboard/AddReview/AddReview";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin/MakeAdmin";
 import ManageAllOrders from "./pages/Dashboard/ManageAllOrders/ManageAllOrders";
+import ManageBlogs from "./pages/Dashboard/ManageBlogs/ManageBlogs";
 import ManageProducts from "./pages/Dashboard/ManageProducts/ManageProducts";
 import MyOrder from "./pages/Dashboard/MyOrder/MyOrder";
 import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
@@ -58,6 +59,7 @@ function App() {
           <Route path="add-product" element={<AddProduct />} />
           <Route path="add-blog" element={<AddBlog />} />
           <Route path="manage-product" element={<ManageProducts />} />
+          <Route path="manage-blog" element={<ManageBlogs />} />
           <Route path="manage-order" element={<ManageAllOrders />} />
           <Route path="make-admin" element={<MakeAdmin />} />
         </Route>

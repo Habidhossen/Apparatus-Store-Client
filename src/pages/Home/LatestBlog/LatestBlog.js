@@ -35,7 +35,10 @@ const LatestBlog = () => {
       </div>
       <hr className="mb-5" />
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {blogs.map((blog) => <BlogCard key={blog._id} blog={blog} />).reverse()}
+        {blogs
+          .slice(0, 4)
+          .map((blog) => <BlogCard key={blog._id} blog={blog} />)
+          .reverse()}
       </div>
     </section>
   );
