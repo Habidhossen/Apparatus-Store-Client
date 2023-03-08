@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import AllBlogs from "./pages/AllBlogs/AllBlogs";
 import AllProducts from "./pages/AllProducts/AllProducts";
-import Blogs from "./pages/Blogs/Blogs";
+import AllReviews from "./pages/AllReviews/AllReviews";
 import AddProduct from "./pages/Dashboard/AddProduct/AddProduct";
 import AddReview from "./pages/Dashboard/AddReview/AddReview";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
@@ -26,11 +27,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blogs" element={<Blogs />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/all-products" element={<AllProducts />} />
-
         <Route path="/signup" element={<Signup />} />
+        <Route path="/all-products" element={<AllProducts />} />
+        <Route path="/all-blogs" element={<AllBlogs />} />
+        <Route path="/all-reviews" element={<AllReviews />} />
         <Route
           path="/purchase/:productID"
           element={

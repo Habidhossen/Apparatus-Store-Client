@@ -26,7 +26,7 @@ const Reviews = () => {
         </div>
         <div>
           <Link
-            to="/"
+            to="all-reviews"
             className="flex items-center gap-2 text-sm font-bold hover:text-primary transition duration-300"
           >
             View All <FaLongArrowAltRight />
