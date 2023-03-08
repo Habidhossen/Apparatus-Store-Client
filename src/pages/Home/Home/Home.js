@@ -5,12 +5,14 @@ import BusinessSummary from "../BusinessSummary/BusinessSummary";
 import ContactDetails from "../ContactDetails/ContactDetails";
 import LatestBlog from "../LatestBlog/LatestBlog";
 import Products from "../Products/Products";
+import ProvidedOffer from "../ProvidedOffer/ProvidedOffer";
 import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
   return (
     <div>
       <Banner />
+      <ProvidedOffer />
       <Products />
       <BusinessSummary />
       <Reviews />
