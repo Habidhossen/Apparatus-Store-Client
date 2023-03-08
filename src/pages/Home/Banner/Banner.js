@@ -18,6 +18,11 @@ const Banner = () => {
           Best Hand <br />
           Tools Collection
         </h1>
+        {/*    <p className="text-sm text-white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+          laudantium exercitationem cumque sed inventore, voluptate ratione.
+          Fuga repudiandae libero illum.
+        </p> */}
         <button className="flex items-center justify-center gap-2 bg-accent hover:bg-teal-600 transition duration-150 text-white text-md font-semibold px-7 py-3 rounded-full">
           Order Now <FaLongArrowAltRight />
         </button>
@@ -27,5 +32,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
-// grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-20
