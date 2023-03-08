@@ -47,7 +47,7 @@ const Navbar = () => {
         {user ? (
           <button
             onClick={logout}
-            className="flex items-center justify-center gap-2 bg-primary hover:bg-rose-600 transition duration-150 text-white text-md font-semibold px-8 py-2 rounded"
+            className="flex items-center justify-center gap-2 bg-primary hover:bg-rose-600 transition duration-150 text-white text-sm font-semibold px-7 py-2 rounded"
           >
             Logout
           </button>

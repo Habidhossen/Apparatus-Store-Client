@@ -17,43 +17,43 @@ const Review = ({ review }) => {
   );
 
   return (
-    <div className="card bg-base-100 shadow-md">
-      <div className="card-body">
-        <div className="flex justify-between">
-          <div>
-            {rating === "1" && <span className="flex">{reviewIcon}</span>}
-            {rating === "2" && (
-              <span className="flex">
-                {reviewIcon} {reviewIcon}
-              </span>
-            )}
-            {rating === "3" && (
-              <span className="flex">
-                {reviewIcon} {reviewIcon} {reviewIcon}
-              </span>
-            )}
-            {rating === "4" && (
-              <span className="flex">
-                {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon}
-              </span>
-            )}
-            {rating === "5" && (
-              <span className="flex">
-                {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon}
-              </span>
-            )}
-          </div>
-          <div>
+    <div className="card shadow-md rounded-md">
+      <div className="card-body space-y-2">
+        <div className="flex justify-center">
+          {rating === "1" && <span className="flex">{reviewIcon}</span>}
+          {rating === "2" && (
+            <span className="flex">
+              {reviewIcon} {reviewIcon}
+            </span>
+          )}
+          {rating === "3" && (
+            <span className="flex">
+              {reviewIcon} {reviewIcon} {reviewIcon}
+            </span>
+          )}
+          {rating === "4" && (
+            <span className="flex">
+              {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon}
+            </span>
+          )}
+          {rating === "5" && (
+            <span className="flex">
+              {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon} {reviewIcon}
+            </span>
+          )}
+          {/* <div>
             <h1 className="text-primary">
               <b>{rating} Star</b>
             </h1>
-          </div>
+          </div> */}
         </div>
-        <p>{msg}</p>
-        <h2 className="text-xl font-bold">&#8212; {name}</h2>
+        <p className="text-center text-text text-sm">{msg}</p>
+        <h2 className="text-center text-heading text-md font-bold">{name}</h2>
       </div>
     </div>
   );
 };
 
 export default Review;
+
+//  &#8212;
