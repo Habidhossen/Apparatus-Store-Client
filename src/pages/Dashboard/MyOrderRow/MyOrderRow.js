@@ -25,11 +25,11 @@ const MyOrderRow = ({ order, setDeletingOrder, refetch }) => {
       <td>{totalPrice}</td>
       <td>
         {paid ? (
-          <span className="badge badge-info text-white text-xs">Paid</span>
+          <span className="badge badge-accent text-white text-xs">Paid</span>
         ) : (
           <Link
             to={`/dashboard/payment/${_id}`}
-            className="btn btn-xs btn-success capitalize text-white"
+            className="btn btn-xs btn-neutral capitalize text-white"
           >
             Payment
           </Link>

@@ -85,7 +85,7 @@ const AddReview = () => {
               )}
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-info text-white">Submit</button>
+              <button className="btn btn-accent text-white">Submit</button>
             </div>
           </form>
         </div>

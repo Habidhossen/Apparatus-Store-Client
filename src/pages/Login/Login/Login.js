@@ -4,6 +4,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import Loading from "../../Shared/Loading/Loading";
@@ -106,14 +107,17 @@ const Login = () => {
             </div>
             {errorMessage}
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="flex items-center justify-center gap-2 bg-primary hover:bg-rose-600 transition duration-150 text-white text-md font-semibold px-8 py-3 rounded-lg">
+                Login
+              </button>
             </div>
           </form>
           <div className="divider">OR</div>
           <button
             onClick={handleGoogleSignIn}
-            className="btn btn-outline btn-secondary"
+            className="btn btn-outline btn-accent capitalize"
           >
+            <FcGoogle className="text-xl mr-4" />
             Continue with Google
           </button>
         </div>

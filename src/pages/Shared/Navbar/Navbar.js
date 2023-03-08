@@ -1,13 +1,17 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "../../../assets/styles/style.css";
 import auth from "../../../Firebase/firebase.init";
 import SubNavbar from "./SubNavbar";
 
 const Navbar = () => {
-  const [user] = useAuthState(auth); // get user info from useAuthState
+  // get user info from useAuthState
+  const [user] = useAuthState(auth);
+
+  // get current route location or pathname
+  const currentLocation = useLocation().pathname;
 
   // handle logout
   const logout = () => {
@@ -22,12 +26,12 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="nav-link" to="/products">
+        <NavLink className="nav-link" to="/all-products">
           Products
         </NavLink>
       </li>
       <li>
-        <NavLink className="nav-link" to="/news">
+        <NavLink className="nav-link" to="/all-blogs">
           News
         </NavLink>
       </li>
@@ -65,10 +69,13 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="px-20">
-        <SubNavbar />
-        <hr />
-      </div>
+      {currentLocation === "/" && (
+        <div className="px-20">
+          <SubNavbar />
+          <hr />
+        </div>
+      )}
+
       <div className="navbar sticky top-0 z-50 bg-white py-3 lg:px-20">
         <div className="navbar-start">
           <div className="dropdown">

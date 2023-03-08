@@ -113,7 +113,9 @@ const Signup = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Signup</button>
+              <button className="flex items-center justify-center gap-2 bg-primary hover:bg-rose-600 transition duration-150 text-white text-md font-semibold px-8 py-3 rounded-lg">
+                Signup
+              </button>
             </div>
           </form>
         </div>

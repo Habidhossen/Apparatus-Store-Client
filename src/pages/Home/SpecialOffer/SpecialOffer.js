@@ -16,7 +16,7 @@ const SpecialOffer = () => {
         accusamus doloremque quidem. Aut, iste.
       </p>
       <Link
-        to="/"
+        to="all-products"
         className="flex items-center gap-2 text-sm font-bold text-primary hover:text-accent transition duration-300"
       >
         Shop now <FaLongArrowAltRight />

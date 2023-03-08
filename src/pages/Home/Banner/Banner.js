@@ -1,4 +1,5 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -18,14 +19,12 @@ const Banner = () => {
           Best Hand <br />
           Tools Collection
         </h1>
-        {/*    <p className="text-sm text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-          laudantium exercitationem cumque sed inventore, voluptate ratione.
-          Fuga repudiandae libero illum.
-        </p> */}
-        <button className="flex items-center justify-center gap-2 bg-accent hover:bg-teal-600 transition duration-150 text-white text-md font-semibold px-7 py-3 rounded-full">
+        <Link
+          to="all-products"
+          className="flex w-44 items-center justify-center gap-2 bg-accent hover:bg-teal-600 transition duration-150 text-white text-md font-semibold py-3 rounded-full"
+        >
           Order Now <FaLongArrowAltRight />
-        </button>
+        </Link>
       </div>
     </section>
   );
