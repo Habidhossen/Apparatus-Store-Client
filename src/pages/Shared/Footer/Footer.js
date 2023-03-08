@@ -1,22 +1,18 @@
 import React from "react";
+import creditcards from "../../../assets/images/credit-cards.png";
 
 const Footer = () => {
   // get the current year
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-slate-800 text-white text-center py-8">
-      <div className="">
-        <p className="text-sm font-normal">
-          Copyright &#169; {year} <span>Apparatus Store - Get Tools Now.</span>
+    <footer className="bg-black text-white py-12">
+      <div className="flex flex-col items-center">
+        <p className="text-sm">
+          Copyright &#169; {year}{" "}
+          <span className="text-primary">Apparatus Store - Get Tools Now.</span>
         </p>
-        <p className="text-sm font-normal mt-2">All Rights Reserved</p>
-        {/* <div className="d-flex align-items-center justify-content-center">
-          <a href="">Privacy Policy</a>
-          <div className="vertical-line-sm"></div>
-          <a href="">Terms of Use</a>
-          <div className="vertical-line-sm"></div>
-          <a href="">About Us</a>
-        </div> */}
+        <p className="text-sm mt-1">All Rights Reserved</p>
+        <img className="mt-5" src={creditcards} alt="" />
       </div>
     </footer>
   );
