@@ -20,6 +20,8 @@ const Payment = () => {
     refetch,
   } = useQuery("orderedProduct", () => fetch(url).then((res) => res.json()));
 
+  console.log(orderedProduct);
+
   if (isLoading) {
     return <Loading />;
   }
@@ -27,23 +29,48 @@ const Payment = () => {
   return (
     <section className="bg-gray-50 px-6 py-6">
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
-        <div className="card-body shadow-sm bg-base-100">
-          <h1 className="text-2xl font-bold">
-            Hello,{" "}
-            <span className="text-green-500">
+        <div className="card-body shadow-lg rounded-xl bg-white space-y-2">
+          <h1 className="text-lg text-text font-bold">
+            Welcome back,{" "}
+            <span className="text-secondary">
               {orderedProduct.customerName}
             </span>
           </h1>
-          <h3>
+          <h6 className="text-sm text-text">
             Payment for{" "}
-            <span className="font-bold">{orderedProduct?.productName}</span>
-          </h3>
-          <p>Email: {orderedProduct.email}</p>
-          <h1 className="text-xl font-bold">
-            Total Price: ${orderedProduct.totalPrice}
-          </h1>
+            <span className="font-semibold">{orderedProduct?.productName}</span>
+          </h6>
+          <h6 className="text-sm text-text">
+            Product ID:{" "}
+            <span className="font-semibold">{orderedProduct?._id}</span>
+          </h6>
+          <h6 className="text-sm text-text">
+            Customer Email:{" "}
+            <span className="font-semibold">{orderedProduct.email}</span>
+          </h6>
+          <h6 className="text-sm text-text">
+            Customer Address:{" "}
+            <span className="font-semibold">{orderedProduct.address}</span>
+          </h6>
+          <h6 className="text-sm text-text">
+            Price:{" "}
+            <span className="font-semibold">
+              ${orderedProduct.totalPrice / orderedProduct.orderQuantity}
+            </span>
+          </h6>
+          <h6 className="text-sm text-text">
+            Ordered Quantity:{" "}
+            <span className="font-semibold">
+              ${orderedProduct.orderQuantity}
+            </span>
+          </h6>
+          <hr />
+          <h6 className="text-heading font-medium">
+            Total Price:{" "}
+            <span className="font-bold">${orderedProduct.totalPrice}</span>
+          </h6>
         </div>
-        <div className="card shadow-md bg-base-100 p-6">
+        <div className="card-body shadow-lg rounded-xl bg-white">
           <Elements stripe={stripePromise}>
             <CheckOutForm orderedProduct={orderedProduct} />
           </Elements>

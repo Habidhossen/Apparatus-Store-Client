@@ -127,13 +127,15 @@ const CheckOutForm = ({ orderedProduct }) => {
           Payment
         </button>
       </form>
-      {cardError && <p className="text-red-500">{cardError}</p>}
+      {cardError && (
+        <p className="text-sm text-red-500 font-semibold">{cardError}</p>
+      )}
       {success && (
-        <div className="text-green-600">
-          <p>{success} </p>
-          <p>
-            Transaction Id:{" "}
-            <span className="text-blue-500 font-bold text-sm">
+        <div className="space-y-2">
+          <p className="text-green-600 text-base font-semibold">{success} </p>
+          <p className="text-text text-base font-semibold">
+            Transaction ID:{" "}
+            <span className="text-accent font-bold text-sm">
               {transactionId}
             </span>{" "}
           </p>
