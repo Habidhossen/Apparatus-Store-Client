@@ -3,8 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { BsCartCheck, BsCheck2Circle } from "react-icons/bs";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { useNavigate, useParams } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 
@@ -12,6 +11,7 @@ const Purchase = () => {
   const [user] = useAuthState(auth); // get user info from useAuthState
   const { productID } = useParams(); // get productId from params
   const [productTotalPrice, setProductTotalPrice] = useState("");
+  const navigate = useNavigate();
 
   const {
     register,
@@ -67,10 +67,7 @@ const Purchase = () => {
       .then((response) => response.json())
       .then((data) => data);
     reset();
-    toast.success("Product Ordered successfully", {
-      theme: "colored",
-      autoClose: 2000,
-    });
+    navigate("/dashboard/order");
   };
 
   return (
@@ -287,7 +284,6 @@ const Purchase = () => {
           </p>
         </div>
       </div>
-      <ToastContainer />
     </section>
   );
 };

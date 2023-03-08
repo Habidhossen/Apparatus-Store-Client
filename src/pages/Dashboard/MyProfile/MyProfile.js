@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import profileImg from "../../../assets/images/profile-img.png";
 import auth from "../../../Firebase/firebase.init";
 
 const MyProfile = () => {
@@ -12,7 +13,10 @@ const MyProfile = () => {
         <hr />
         <div className="flex items-center gap-4 mt-6">
           <div>
-            <img className="w-24 rounded-full" src={user?.photoURL} />
+            <img
+              className="w-24 rounded-full"
+              src={user?.photoURL ? user?.photoURL : profileImg}
+            />
           </div>
           <div>
             <p className="text-base font-bold mb-1">{user?.displayName}</p>
