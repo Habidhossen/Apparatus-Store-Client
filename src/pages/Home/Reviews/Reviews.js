@@ -11,7 +11,9 @@ const Reviews = () => {
     isLoading,
     refetch,
   } = useQuery("reviews", () =>
-    fetch("http://localhost:5000/review").then((res) => res.json())
+    fetch("https://apparatus-store-server.onrender.com/review").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -19,7 +21,7 @@ const Reviews = () => {
   }
 
   return (
-    <section className="my-20 mx-20">
+    <section className="mx-4 md:mx-20 lg:mx-20 my-20">
       <div className="flex justify-between my-4">
         <div>
           <h1 className="text-xl font-bold">Our Happy Client Say</h1>
@@ -36,9 +38,9 @@ const Reviews = () => {
       <hr className="mb-6" />
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {reviews
-          .slice(0, 3)
           .map((review) => <Review key={review._id} review={review} />)
-          .reverse()}
+          .reverse()
+          .slice(0, 3)}
       </div>
     </section>
   );

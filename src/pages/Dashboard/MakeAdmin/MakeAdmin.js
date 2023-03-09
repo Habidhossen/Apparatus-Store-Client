@@ -10,7 +10,9 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:5000/user").then((res) => res.json())
+    fetch("https://apparatus-store-server.onrender.com/user").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {

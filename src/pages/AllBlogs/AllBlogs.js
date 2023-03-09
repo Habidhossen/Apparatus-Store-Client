@@ -9,7 +9,9 @@ const AllBlogs = () => {
     isLoading,
     refetch,
   } = useQuery("blogs", () =>
-    fetch("http://localhost:5000/blog").then((res) => res.json())
+    fetch("https://apparatus-store-server.onrender.com/blog").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -17,7 +19,7 @@ const AllBlogs = () => {
   }
 
   return (
-    <section className="my-20 mx-20">
+    <section className="mx-4 md:mx-20 lg:mx-20 my-20">
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {blogs.map((blog) => <BlogCard key={blog._id} blog={blog} />).reverse()}
       </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SpecialOffer = () => {
   return (
-    <section className="my-20 mx-20 p-20 bg-black rounded-xl space-y-4">
+    <section className="mx-4 md:mx-20 lg:mx-20 my-20 p-20 bg-black rounded-xl space-y-4">
       <h6 className="inline bg-secondary text-white text-xs font-medium px-4 py-1 text-center rounded-xl">
         On Sale This Week
       </h6>

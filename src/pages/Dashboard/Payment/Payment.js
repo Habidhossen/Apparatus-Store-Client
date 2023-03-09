@@ -13,7 +13,7 @@ const stripePromise = loadStripe(
 const Payment = () => {
   const { id } = useParams();
 
-  const url = `http://localhost:5000/order/${id}`;
+  const url = `https://apparatus-store-server.onrender.com/order/${id}`;
   const {
     data: orderedProduct,
     isLoading,

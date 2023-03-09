@@ -6,7 +6,7 @@ const DeleteBlog = ({ deletingBlog, refetch }) => {
 
   const handleBlogDelete = () => {
     console.log(_id);
-    fetch(`http://localhost:5000/blog/${_id}`, {
+    fetch(`https://apparatus-store-server.onrender.com/blog/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

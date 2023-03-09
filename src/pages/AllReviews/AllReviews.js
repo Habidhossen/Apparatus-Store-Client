@@ -9,14 +9,16 @@ const AllReviews = () => {
     isLoading,
     refetch,
   } = useQuery("reviews", () =>
-    fetch("http://localhost:5000/review").then((res) => res.json())
+    fetch("https://apparatus-store-server.onrender.com/review").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
     return <Loading />;
   }
   return (
-    <section className="my-20 mx-20">
+    <section className="mx-4 md:mx-20 lg:mx-20 my-20">
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {reviews
           .map((review) => <Review key={review._id} review={review} />)

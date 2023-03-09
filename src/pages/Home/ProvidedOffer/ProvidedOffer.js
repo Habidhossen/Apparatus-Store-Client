@@ -6,7 +6,7 @@ import { TbSpeakerphone } from "react-icons/tb";
 
 const ProvidedOffer = () => {
   return (
-    <section className="my-24 mx-32 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <section className="mx-4 md:mx-32 lg:mx-32 my-24 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <div className="flex items-center gap-4">
         <BiSupport className="text-5xl text-secondary" />
         <div className="space-y-1">

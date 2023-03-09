@@ -11,7 +11,9 @@ const Products = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch("http://localhost:5000/product").then((res) => res.json())
+    fetch("https://apparatus-store-server.onrender.com/product").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -19,7 +21,7 @@ const Products = () => {
   }
 
   return (
-    <section className="my-20 mx-20">
+    <section className="mx-4 md:mx-20 lg:mx-20 my-20">
       <div className="flex justify-between my-4">
         <div>
           <h1 className="text-xl font-bold">Featured Products</h1>
@@ -36,11 +38,11 @@ const Products = () => {
       <hr className="mb-5" />
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {products
-          .slice(0, 8)
           .map((singleProduct) => (
             <Tool key={singleProduct._id} singleProduct={singleProduct} />
           ))
-          .reverse()}
+          .reverse()
+          .slice(0, 8)}
       </div>
     </section>
   );

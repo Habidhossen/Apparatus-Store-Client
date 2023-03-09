@@ -12,7 +12,9 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch("http://localhost:5000/product/").then((res) => res.json())
+    fetch("https://apparatus-store-server.onrender.com/product/").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {

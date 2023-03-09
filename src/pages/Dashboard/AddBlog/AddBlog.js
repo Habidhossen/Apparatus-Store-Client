@@ -23,7 +23,7 @@ const AddBlog = () => {
     const blogData = { img, title, desc, date };
 
     // send data to the server
-    fetch("http://localhost:5000/blog", {
+    fetch("https://apparatus-store-server.onrender.com/blog", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

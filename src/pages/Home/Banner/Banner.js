@@ -11,7 +11,7 @@ const Banner = () => {
         height: "600px",
       }}
     >
-      <div className="mx-20 space-y-3">
+      <div className="mx-4 md:mx-20 lg:mx-20">
         <h6 className="inline bg-secondary text-white text-xs font-medium px-4 py-1 text-center rounded-xl capitalize">
           Special Offer for this Week
         </h6>
@@ -21,7 +21,7 @@ const Banner = () => {
         </h1>
         <Link
           to="all-products"
-          className="flex w-44 items-center justify-center gap-2 bg-accent hover:bg-teal-600 transition duration-150 text-white text-md font-semibold py-3 rounded-full"
+          className="mt-4 flex w-44 items-center justify-center gap-2 bg-accent hover:bg-teal-600 transition duration-150 text-white text-md font-semibold py-3 rounded-full"
         >
           Order Now <FaLongArrowAltRight />
         </Link>

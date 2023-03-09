@@ -3,7 +3,7 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 const AboutUs = () => {
   return (
-    <section className="px-20 py-20 h-screen bg-lightBlue">
+    <section className="px-6 md:px-20 lg:px-20 py-20 h-screen bg-lightBlue">
       {/* <h1 className="text-4xl font-extrabold text-center mb-6">Our Tools</h1> */}
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         <div>

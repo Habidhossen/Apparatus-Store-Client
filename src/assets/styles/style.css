@@ -1,6 +1,5 @@
 /* Customize the Navigation-bar */
 .nav-brand {
-  font-family: var(--font-krub);
   font-size: 20px;
   font-weight: 700;
   color: var(--color-accent);
@@ -17,4 +16,12 @@
 }
 .nav-link:hover {
   color: var(--color-primary) !important;
+}
+
+@media (max-width: 576px) {
+  .nav-brand {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
 }

@@ -22,11 +22,10 @@ const CheckOutForm = ({ orderedProduct }) => {
   } = orderedProduct;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://apparatus-store-server.onrender.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify({ totalPrice }),
     })
@@ -85,11 +84,10 @@ const CheckOutForm = ({ orderedProduct }) => {
         appointment: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/order/${_id}`, {
+      fetch(`https://apparatus-store-server.onrender.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
-          //   authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify(payment),
       })

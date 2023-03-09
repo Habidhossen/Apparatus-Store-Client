@@ -25,9 +25,9 @@ const Purchase = () => {
     isLoading,
     refetch,
   } = useQuery("product", () =>
-    fetch(`http://localhost:5000/product/${productID}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://apparatus-store-server.onrender.com/product/${productID}`
+    ).then((res) => res.json())
   );
 
   if (isLoading) {
@@ -56,7 +56,7 @@ const Purchase = () => {
     };
 
     // send data to the server
-    const url = "http://localhost:5000/order";
+    const url = "https://apparatus-store-server.onrender.com/order";
     fetch(url, {
       method: "POST",
       headers: {
@@ -71,7 +71,7 @@ const Purchase = () => {
   };
 
   return (
-    <section className="bg-gray-50 px-40 py-4">
+    <section className="bg-gray-50 py-4 px-4 md:px-20 lg:px-40">
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
         <div className="card space-y-2 shadow-xs rounded-lg bg-base-100 p-6">
           <div className="flex justify-center">

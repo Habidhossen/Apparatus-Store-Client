@@ -12,7 +12,9 @@ const ManageBlogs = () => {
     isLoading,
     refetch,
   } = useQuery("blogs", () =>
-    fetch("http://localhost:5000/blog/").then((res) => res.json())
+    fetch("https://apparatus-store-server.onrender.com/blog/").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {

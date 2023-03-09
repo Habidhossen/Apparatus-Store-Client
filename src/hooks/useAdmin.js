@@ -6,11 +6,10 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`http://localhost:5000/admin/${email}`, {
+      fetch(`https://apparatus-store-server.onrender.com/admin/${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       })
         .then((res) => res.json())
