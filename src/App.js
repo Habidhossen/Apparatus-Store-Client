@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import AllBlogs from "./pages/AllBlogs/AllBlogs";
 import AllProducts from "./pages/AllProducts/AllProducts";
 import AllReviews from "./pages/AllReviews/AllReviews";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/all-products" element={<AllProducts />} />
         <Route path="/all-reviews" element={<AllReviews />} />
         <Route path="/all-blogs" element={<AllBlogs />} />

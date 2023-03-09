@@ -1,4 +1,5 @@
 import React from "react";
+import { BsCartCheckFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Product = ({ singleProduct }) => {
@@ -25,7 +26,7 @@ const Product = ({ singleProduct }) => {
       <div className="card-body space-y-1">
         <div className="flex items-center gap-3">
           <del className="text-md text-text">${Number(price) + 100}</del>
-          <h6 className="text-xl font-semibold text-primary">${price}</h6>
+          <h6 className="text-xl font-bold text-primary">${price}</h6>
         </div>
         <h2 className="text-md font-bold text-heading">{name}</h2>
         <p className="text-sm text-text">{desc.slice(0, 100) + "..."}</p>
@@ -33,9 +34,9 @@ const Product = ({ singleProduct }) => {
         <div className="card-actions">
           <Link
             to={`/purchase/${_id}`}
-            className="flex items-center justify-center gap-2 w-full bg-primary hover:bg-rose-600 transition duration-150 text-white text-xs font-semibold py-2 rounded"
+            className="flex items-center justify-center gap-2 w-full bg-primary hover:bg-rose-600 transition duration-150 text-white text-xs font-semibold py-3 rounded"
           >
-            Buy Now
+            Buy Now <BsCartCheckFill />
           </Link>
         </div>
       </div>

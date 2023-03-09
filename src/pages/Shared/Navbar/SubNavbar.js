@@ -8,16 +8,16 @@ const SubNavbar = () => {
         <h6 className="text-sm font-medium text-text flex items-center gap-2">
           Need help?
           <b className="flex items-center gap-2 cursor-pointer hover:text-secondary duration-200">
-            <FaPhoneAlt /> (+123) 456 7890
+            <FaPhoneAlt className="text-secondary" /> (+123) 456 7890
           </b>
         </h6>
       </div>
       <div className="flex gap-4">
         <h6 className="text-sm font-medium text-text flex items-center gap-2 cursor-pointer hover:text-secondary duration-200">
-          <FaEnvelope /> help@support.com
+          <FaEnvelope className="text-secondary" /> help@support.com
         </h6>
         <h6 className="text-sm font-medium text-text flex items-center gap-2 cursor-pointer hover:text-secondary duration-200">
-          <FaMapMarkerAlt /> Our Locations
+          <FaMapMarkerAlt className="text-secondary" /> Our Locations
         </h6>
       </div>
     </div>
