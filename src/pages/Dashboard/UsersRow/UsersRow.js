@@ -27,7 +27,7 @@ const UsersRow = ({ user, refetch }) => {
         {role !== "admin" ? (
           <button
             onClick={makeAdmin}
-            className="btn btn-neutral btn-xs text-white text-xs capitalize"
+            className="btn btn-primary btn-xs text-white text-xs capitalize"
           >
             Make Admin
           </button>
@@ -36,27 +36,6 @@ const UsersRow = ({ user, refetch }) => {
             Already an Admin
           </span>
         )}
-
-        {/* {paid ? (
-          <span className="badge badge-info text-white text-xs">Paid</span>
-        ) : (
-          <Link
-            to={`/dashboard/payment/${_id}`}
-            className="btn btn-xs btn-success capitalize text-white"
-          >
-            Payment
-          </Link>
-        )}
-
-        {paid || (
-          <label
-            onClick={() => setDeletingOrder(order)}
-            htmlFor="order-delete"
-            className="btn btn-xs btn-error capitalize text-white ml-2"
-          >
-            Cancel
-          </label>
-        )} */}
       </td>
     </tr>
   );

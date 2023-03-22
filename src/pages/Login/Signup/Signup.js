@@ -24,6 +24,26 @@ const Signup = () => {
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
+    saveUserDB(data.name, data.email);
+  };
+
+  // save user to database
+  const saveUserDB = (name, email) => {
+    const createUserData = { name, email };
+    fetch("https://apparatus-store-server.onrender.com/user", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(createUserData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   // if user created
@@ -94,7 +114,7 @@ const Signup = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 placeholder="password"
                 className="input input-bordered"
                 {...register("password", { required: true })}

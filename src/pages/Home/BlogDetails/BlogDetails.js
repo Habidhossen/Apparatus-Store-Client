@@ -20,7 +20,7 @@ const BlogDetails = () => {
   }
 
   return (
-    <section className="px-40 py-10">
+    <section className="px-4 md:px-28 lg:px-40 py-10">
       <div>
         <img className="w-full rounded-md mb-8" src={blog.img} alt="" />
         <div>
@@ -28,7 +28,9 @@ const BlogDetails = () => {
             <FaRegCalendar className="text-secondary" />
             {blog.date}
           </p>
-          <h1 className="text-heading font-semibold text-3xl">{blog.title}</h1>
+          <h1 className="text-heading font-semibold text-2xl md:text-3xl lg:text-3xl">
+            {blog.title}
+          </h1>
           <p className="py-4 text-text">{blog.desc}</p>
         </div>
       </div>
