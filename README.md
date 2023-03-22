@@ -1,4 +1,4 @@
-# Apparatus Store
+# Apparatus Store - Tools Manufacturer Site
 
 Live Site: [https://apparatus-store-f3edc.web.app/](https://apparatus-store-f3edc.web.app/)
 
